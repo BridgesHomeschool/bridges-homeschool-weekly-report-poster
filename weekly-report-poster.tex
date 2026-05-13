@@ -1,184 +1,536 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[margin=1cm]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\newcommand{\BridgesAssetsRoot}{../bridges-brand-system/assets/bridges}
+\documentclass[a4,whitepaper,english]{bridgesbook}
+\geometry{margin=0.55cm,headheight=0pt,headsep=0pt,footskip=0pt}
 \usepackage{array}
-\usepackage{booktabs}
 \usepackage{colortbl}
-\usepackage{xcolor}
 \usepackage{tabularx}
-\usepackage{graphicx}
-\usepackage{ragged2e}
-\usepackage{setspace}
-\pagestyle{empty}
-\setlength{\parindent}{0pt}
-\setlength{\tabcolsep}{4pt}
-\renewcommand{\arraystretch}{1.18}
+\usetikzlibrary{calc,arrows.meta}
 
-\definecolor{BridgesNavy}{HTML}{101A29}
-\definecolor{BridgesCream}{HTML}{FFF3E9}
-\definecolor{BridgesInk}{HTML}{111827}
-\definecolor{BridgesGrey}{HTML}{6B7280}
-\definecolor{BridgesLine}{HTML}{CBD5E1}
-\definecolor{BridgesBlue}{HTML}{EAF2FB}
-\definecolor{BridgesTeal}{HTML}{E8F7F5}
-\definecolor{BridgesGold}{HTML}{FFF3D9}
-\definecolor{BridgesRose}{HTML}{FBEAEC}
+\pagestyle{empty}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.06}
+
+\definecolor{Navy}{HTML}{0D1828}
+\definecolor{Ink}{HTML}{172033}
+\definecolor{Muted}{HTML}{6E7785}
+\definecolor{Line}{HTML}{D7DEE8}
+\definecolor{Paper}{HTML}{FFFFFF}
+\definecolor{Cream}{HTML}{FFF8ED}
+\definecolor{Sky}{HTML}{EFF6FC}
+\definecolor{Mint}{HTML}{EEF6EA}
+\definecolor{Peach}{HTML}{FFF1E5}
+\definecolor{Lavender}{HTML}{F4EFFA}
+\definecolor{Gold}{HTML}{D6A84F}
+\definecolor{Sun}{HTML}{F8E4A5}
+\definecolor{SoftGreen}{HTML}{78966D}
+\definecolor{SoftBlue}{HTML}{6E9EC5}
+\definecolor{SoftOrange}{HTML}{DD8C3D}
+\definecolor{SoftPurple}{HTML}{9A7BB8}
+\definecolor{SoftRed}{HTML}{D96E5F}
+\definecolor{SoftTeal}{HTML}{63A99C}
+
+\pagecolor{Paper}
+\color{Ink}
 
 \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
-\newcommand{\sectiontitle}[1]{\vspace{0.1em}{\large\bfseries\color{BridgesNavy}#1}\par\vspace{0.25em}}
-\newcommand{\smalltitle}[1]{{\small\bfseries\color{BridgesGrey}#1}}
-\newcommand{\placeholderbox}[2]{%
-  \fcolorbox{BridgesLine}{white}{%
-    \begin{minipage}[c][#1][c]{#2}
-      \centering\scriptsize\color{BridgesGrey}placeholder
-    \end{minipage}%
-  }%
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand{\StudentName}{Charles}
+\newcommand{\ReportTitle}{Weekly Learning Dashboard}
+\newcommand{\ReportWeek}{Week of 11--17 May 2026}
+
+\newcommand{\IconBook}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (0,-1.65)..controls(-.65,-1.15)and(-1.35,-1.15)..(-2,-1.45)--(-2,1.55)..controls(-1.25,1.25)and(-.55,1.25)..(0,.75)--cycle;\draw[white] (0,-1.65)..controls(.65,-1.15)and(1.35,-1.15)..(2,-1.45)--(2,1.55)..controls(1.25,1.25)and(.55,1.25)..(0,.75)--cycle;\draw[white] (0,.75)--(0,-1.65);\end{tikzpicture}}
+\newcommand{\IconCalc}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white,rounded corners=1pt] (-1.6,-1.9) rectangle (1.6,1.8);\draw[white] (-1.05,.95)--(1.05,.95);\foreach \x in {-1,0,1}{\foreach \y in {.25,-.55,-1.35}{\fill[white] (\x,\y) circle (.12);}}\end{tikzpicture}}
+\newcommand{\IconGlobe}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (0,0) circle (1.75);\draw[white] (-1.75,0)--(1.75,0);\draw[white] (0,-1.75)..controls(-.85,-.8)and(-.85,.8)..(0,1.75)..controls(.85,.8)and(.85,-.8)..(0,-1.75);\draw[white] (-1.35,.9)..controls(-.4,.55)and(.4,.55)..(1.35,.9);\draw[white] (-1.35,-.9)..controls(-.4,-.55)and(.4,-.55)..(1.35,-.9);\end{tikzpicture}}
+\newcommand{\IconPalette}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (0,0) circle (1.75);\fill[Navy] (.72,-.78) circle (.42);\fill[white] (-.85,.75) circle (.16);\fill[white] (.1,1.05) circle (.16);\fill[white] (.85,.45) circle (.16);\fill[white] (-.95,-.2) circle (.16);\end{tikzpicture}}
+\newcommand{\IconRun}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\fill[white] (.45,1.65) circle (.32);\draw[white] (.2,1.15)--(-.45,.25)--(.45,-.2)--(1.25,-1.55);\draw[white] (-.45,.25)--(-1.55,-.15);\draw[white] (.15,.65)--(1.15,.55);\draw[white] (.45,-.2)--(-.65,-1.45);\end{tikzpicture}}
+\newcommand{\IconHome}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (-1.7,-.2)--(0,1.45)--(1.7,-.2);\draw[white] (-1.25,-.15)--(-1.25,-1.75)--(1.25,-1.75)--(1.25,-.15);\draw[white] (-.35,-1.75)--(-.35,-.75)--(.35,-.75)--(.35,-1.75);\end{tikzpicture}}
+\newcommand{\IconCamera}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white,rounded corners=1pt] (-1.9,-1.25) rectangle (1.9,1.15);\draw[white] (-.95,1.15)--(-.65,1.65)--(.65,1.65)--(.95,1.15);\draw[white] (0,0) circle (.68);\fill[white] (1.35,.6) circle (.12);\end{tikzpicture}}
+
+\newcommand{\DoodleLeaf}{%
+  \begin{tikzpicture}[x=.12cm,y=.12cm,line width=.55pt,baseline=-0.4ex]
+    \draw[SoftGreen] (-.2,-1.2)..controls(.25,-.25)and(.9,.25)..(1.65,.7);
+    \draw[SoftGreen,fill=Mint] (.15,-.35)..controls(-.75,.05)and(-.7,.95)..(.45,.72)..controls(.78,.22)and(.62,-.1)..(.15,-.35);
+    \draw[SoftGreen,fill=Mint] (.85,.18)..controls(.35,.72)and(.6,1.42)..(1.45,1.02)..controls(1.58,.52)and(1.3,.28)..(.85,.18);
+  \end{tikzpicture}%
 }
-\newcommand{\statcard}[2]{%
-  \fcolorbox{BridgesLine}{BridgesCream}{%
-    \begin{minipage}[c][1.45cm][c]{0.455\linewidth}
-      \centering
-      {\scriptsize\color{BridgesGrey}\bfseries #1}\par
-      \vspace{0.12em}
-      {\Large\bfseries\color{BridgesInk}#2}
-    \end{minipage}%
-  }%
+
+\newcommand{\DoodleStar}{%
+  \begin{tikzpicture}[x=.12cm,y=.12cm,baseline=-0.55ex]
+    \path[fill=Gold,draw=Gold] (90:1.1)--(126:.38)--(162:1.1)--(198:.38)--(234:1.1)--(270:.38)--(306:1.1)--(342:.38)--(18:1.1)--(54:.38)--cycle;
+  \end{tikzpicture}%
 }
-\newcommand{\panel}[2]{%
-  \fcolorbox{BridgesLine}{#1}{%
-    \begin{minipage}[t]{\linewidth}
-      \vspace{0.35em}
-      #2
-      \vspace{0.35em}
-    \end{minipage}%
-  }%
+
+\newcommand{\DoodleBook}{%
+  \begin{tikzpicture}[x=.12cm,y=.12cm,line width=.55pt,baseline=-0.45ex]
+    \draw[Navy] (-1.5,-.95)..controls(-.85,-.65)and(-.35,-.65)..(0,-.9)--(0,.8)..controls(-.5,.55)and(-.95,.55)..(-1.5,.75)--cycle;
+    \draw[Navy] (1.5,-.95)..controls(.85,-.65)and(.35,-.65)..(0,-.9)--(0,.8)..controls(.5,.55)and(.95,.55)..(1.5,.75)--cycle;
+    \draw[Navy] (0,.8)--(0,-.9);
+  \end{tikzpicture}%
 }
-\newcommand{\bookitem}[3]{%
-  \noindent\begin{minipage}[t]{\linewidth}
-    \noindent\begin{minipage}[c]{1.4cm}
-      \placeholderbox{1.4cm}{1.4cm}
-    \end{minipage}%
-    \hfill\begin{minipage}[c]{\dimexpr\linewidth-1.55cm\relax}
-      {\small\bfseries #2}\par
-      {\scriptsize\color{BridgesGrey}#3}
+
+\newcommand{\DoodleCamera}{%
+  \begin{tikzpicture}[x=.12cm,y=.12cm,line width=.55pt,baseline=-0.45ex]
+    \draw[Navy,rounded corners=1pt] (-1.55,-.9) rectangle (1.55,.85);
+    \draw[Navy] (-.72,.85)--(-.45,1.2)--(.45,1.2)--(.72,.85);
+    \draw[Navy] (0,0) circle (.45);
+    \fill[Navy] (1.05,.45) circle (.08);
+  \end{tikzpicture}%
+}
+
+\newcommand{\ThinPageFrame}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[Navy,line width=0.85pt]
+      ([xshift=0.28cm,yshift=-0.28cm]current page.north west)
+      rectangle
+      ([xshift=-0.28cm,yshift=0.28cm]current page.south east);
+    \fill[Mint] ([xshift=0.72cm,yshift=-0.55cm]current page.north west) circle (0.045cm);
+    \fill[Sun] ([xshift=1.05cm,yshift=-0.82cm]current page.north west) circle (0.035cm);
+    \fill[Sky] ([xshift=-0.8cm,yshift=-0.56cm]current page.north east) circle (0.04cm);
+    \node[anchor=south,inner sep=0pt] at ([yshift=0.47cm]current page.south) {%
+      \IfFileExists{\bridgespath{branding/derived/logo-blackwhite.pdf}}{%
+        \includegraphics[height=0.32cm]{\bridgespath{branding/derived/logo-blackwhite.pdf}}%
+      }{{\scriptsize\bfseries BRIDGES}}%
+      \hspace{1em}{\scriptsize\color{Muted}Rooted in curiosity. Guided by love. Learning for life.}%
+    };
+  \end{tikzpicture}%
+}
+
+\newcommand{\StudentPhoto}{%
+  \IfFileExists{assets/student-photo.png}{%
+    \begin{tikzpicture}
+      \node[circle,draw=Line,line width=0.4pt,inner sep=1pt] {\includegraphics[width=1.55cm,height=1.55cm,keepaspectratio]{assets/student-photo.png}};
+    \end{tikzpicture}\hspace{0.5em}%
+  }{}%
+}
+
+\newcommand{\Metric}[3]{%
+  \begin{minipage}[c]{0.155\linewidth}
+    \centering
+    \tikz[baseline=-0.6ex]\node[circle,fill=Navy,minimum size=0.36cm,inner sep=0pt] {#1};\par
+    \vspace{0.03em}
+    {\fontsize{13}{13}\selectfont\bfseries\color{Navy}#2}\par
+    {\tiny\bfseries\color{Muted}\MakeUppercase{#3}}
+  \end{minipage}%
+}
+
+\newcommand{\MetricSep}{%
+  \hfill{\color{Line}\vrule width 0.35pt height 1.05cm}\hfill%
+}
+
+\newcommand{\GlancePanel}{%
+  \begin{tcolorbox}[
+    title={Week at a Glance},
+    colback=Sky,
+    colframe=Line,
+    coltitle=white,
+    colbacktitle=Navy,
+    fonttitle=\scriptsize\bfseries,
+    arc=2mm,
+    boxrule=0.4pt,
+    left=2mm,
+    right=2mm,
+    top=0.9mm,
+    bottom=0.9mm
+  ]
+    \Metric{\IconBook}{6}{Pillars}\MetricSep
+    \Metric{\IconCalc}{22}{Activities}\MetricSep
+    \Metric{\IconRun}{7.5h}{Logged}\MetricSep
+    \Metric{\IconBook}{2}{Books}\MetricSep
+    \Metric{\IconCamera}{4}{Evidence}\par
+    \vspace{0.2em}
+    \begin{tcolorbox}[
+      colback=Paper,
+      colframe=Sky,
+      boxrule=0pt,
+      arc=1.8mm,
+      left=1.6mm,
+      right=1.6mm,
+      top=0.45mm,
+      bottom=0.45mm
+    ]
+      \tiny\textbf{\color{Navy}Main thread:} steady practice, short sessions, and stronger follow-through.
+    \end{tcolorbox}
+  \end{tcolorbox}%
+}
+
+\newcommand{\SoftNote}[1]{%
+  \begin{tcolorbox}[
+    colback=Cream,
+    colframe=Cream,
+    boxrule=0pt,
+    arc=2.5mm,
+    left=2.4mm,
+    right=2.4mm,
+    top=1.05mm,
+    bottom=1.05mm
+  ]
+    \begin{minipage}[c]{0.08\linewidth}
+      \centering\DoodleLeaf
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.88\linewidth}
+      \scriptsize\itshape #1
     \end{minipage}
-  \end{minipage}\par\vspace{0.35em}
+  \end{tcolorbox}%
 }
-\newcommand{\evidenceitem}{\placeholderbox{1.5cm}{1.5cm}}
+
+\newcommand{\PillarMark}[3]{%
+  \begin{tikzpicture}[baseline=-0.55ex]
+    \node[circle,fill=#1,minimum size=0.64cm,text=white] (icon) {#2};
+    \node[anchor=west,text width=1.32cm,align=left] at ([xshift=0.07cm]icon.east) {%
+      \fontsize{6.4}{6.9}\selectfont\textbf{\color{Navy}#3}%
+    };
+  \end{tikzpicture}%
+}
+
+\newcommand{\LevelNotes}[3]{%
+  \begingroup\setlength{\parskip}{0.02em}%
+  {\color{Gold}$\bullet$} #1\par
+  {\color{Gold}$\bullet$} #2\par
+  {\color{Gold}$\bullet$} #3%
+  \endgroup
+}
+
+\newcommand{\ActivityNotes}[3]{%
+  #1\par
+  #2\par
+  #3%
+}
+
+\newcommand{\NoMinutes}{\textcolor{Muted}{---}}
+
+\newcommand{\PillarRow}[4]{%
+  \rule[-0.72cm]{0pt}{1.58cm}#1
+  & #2
+  & #3
+  & #4\\
+  \hline
+}
+
+\newcommand{\PanelTitle}[3]{%
+  \tikz[baseline=(n.base)]\node[
+    fill=#1,
+    text=#2,
+    rounded corners=5pt,
+    inner xsep=10pt,
+    inner ysep=2.4pt
+  ] (n) {\scriptsize\bfseries #3};%
+}
+
+\newcommand{\ImageBox}[4]{%
+  \IfFileExists{#1}{%
+    \includegraphics[width=#2,height=#3,keepaspectratio]{#1}%
+  }{%
+    \begingroup
+    \setlength{\fboxsep}{0pt}%
+    \fcolorbox{Line}{#4}{%
+      \begin{minipage}[c][#3][c]{#2}
+        \centering{\tiny\color{Muted}image}
+      \end{minipage}%
+    }%
+    \endgroup
+  }%
+}
+
+\newcommand{\BookCover}[4]{%
+  \IfFileExists{#1}{%
+    \includegraphics[width=#2,height=#3,keepaspectratio]{#1}%
+  }{%
+    \begingroup
+    \setlength{\fboxsep}{0pt}%
+    \fcolorbox{Line}{#4}{%
+      \begin{minipage}[c][#3][c]{#2}
+        \centering
+        {\color{Navy!28}\rule{0.45cm}{0.45pt}}\par
+        \vspace{0.12cm}
+        {\color{Navy!22}\rule{0.28cm}{0.45pt}}\par
+        \vspace{0.1cm}
+        \DoodleBook
+      \end{minipage}%
+    }%
+    \endgroup
+  }%
+}
+
+\newcommand{\EvidenceThumb}[3]{%
+  \IfFileExists{#1}{%
+    \includegraphics[width=#2,height=#3,keepaspectratio]{#1}%
+  }{%
+    \begingroup
+    \setlength{\fboxsep}{0pt}%
+    \fcolorbox{Line}{Sky!35}{%
+      \begin{minipage}[c][#3][c]{#2}
+        \centering
+        \begin{tikzpicture}[x=.12cm,y=.12cm,line width=.5pt]
+          \draw[Muted,rounded corners=1pt] (-1.45,-.9) rectangle (1.45,.85);
+          \draw[Muted] (-.72,.85)--(-.45,1.2)--(.45,1.2)--(.72,.85);
+          \draw[Muted] (0,0) circle (.45);
+        \end{tikzpicture}
+      \end{minipage}%
+    }%
+    \endgroup
+  }%
+}
+
+\newcommand{\BookItem}[5]{%
+  \begin{minipage}[t]{\linewidth}
+    \begin{minipage}[t]{1.05cm}
+      \BookCover{#1}{0.96cm}{1.08cm}{Cream}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{\dimexpr\linewidth-1.22cm\relax}
+      {\tiny\bfseries\color{Navy}#2}\par
+      {\tiny #3}\par
+      {\tiny\itshape\color{Muted}#4}\par
+      {\tiny #5}
+    \end{minipage}
+  \end{minipage}\par\vspace{0.18em}
+}
+
+\newcommand{\EvidenceItem}[3]{%
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    \EvidenceThumb{#1}{2.12cm}{1.28cm}\par
+    {\tiny\itshape #2}
+  \end{minipage}#3%
+}
+
+\newcommand{\PatternPill}[1]{%
+  \tikz[baseline=(n.base)]\node[
+    fill=Paper,
+    draw=Line,
+    rounded corners=5pt,
+    inner xsep=4pt,
+    inner ysep=1.2pt
+  ] (n) {\tiny\bfseries #1};%
+}
+
+\newcommand{\PatternChip}[2]{%
+  \tikz[baseline=(n.base)]\node[
+    fill=#1,
+    draw=Line,
+    rounded corners=3pt,
+    inner xsep=4pt,
+    inner ysep=1.5pt,
+    text width=2.25cm,
+    align=left
+  ] (n) {\tiny #2};%
+}
+
+\newcommand{\WeeklyPatternCard}{%
+  \begin{tcolorbox}[
+    title={\DoodleLeaf\ Weekly Pattern},
+    colback=Mint,
+    colframe=Line,
+    colbacktitle=Mint,
+    coltitle=Navy,
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.35pt,
+    left=1.8mm,
+    right=1.8mm,
+    top=1.4mm,
+    bottom=1.1mm,
+    height=3.25cm
+  ]
+    \scriptsize
+    {\color{Muted}\textbf{Active days}}\par
+    \PatternPill{Mon}\ \PatternPill{Tue}\ \PatternPill{Wed}\ \PatternPill{Thu}\ \PatternPill{Fri}\par
+    \vspace{0.32em}
+    \PatternChip{Paper}{\textbf{Most consistent}\par Languages}\hfill
+    \PatternChip{Paper}{\textbf{Strongest days}\par Tue / Fri}\par
+    \vspace{0.16em}
+    \PatternChip{Paper}{\textbf{Lightest areas}\par Arts evidence}\hfill
+    \PatternChip{Paper}{\textbf{Recordkeeping}\par Practical Life}\par
+    \vspace{0.28em}
+    {\itshape\color{Muted}Learning was spread across five active days.}
+  \end{tcolorbox}%
+}
+
+\newcommand{\FocusCard}[4]{%
+  \begin{minipage}[t]{0.24\linewidth}
+    \fcolorbox{Line}{#1}{%
+      \begin{minipage}[t][1.62cm][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+        \RaggedRight
+        \tikz[baseline=(n.base)]\node[circle,fill=Navy,text=white,minimum size=0.46cm,inner sep=0pt] (n) {\scriptsize\bfseries #2};
+        \hspace{0.25em}{\scriptsize\bfseries\color{Navy}#3}\par
+        \vspace{0.08em}
+        {\scriptsize #4}
+      \end{minipage}%
+    }%
+  \end{minipage}%
+}
 
 \begin{document}
-\pagecolor{BridgesCream}
+\ThinPageFrame
+\vspace*{0.02cm}
 
-\begin{center}
-{\Huge\bfseries\color{BridgesNavy} Weekly Report Poster}\par
-\vspace{0.15em}
-{\small\color{BridgesGrey}Name:\ \rule{3.4cm}{0.4pt}\hfill Title:\ \rule{2.9cm}{0.4pt}\hfill Date:\ \rule{2.4cm}{0.4pt}}
-\end{center}
-
-\vspace{0.35em}
-
-\noindent\begin{minipage}[t]{0.63\textwidth}
-\sectiontitle{This week's visual}
-\IfFileExists{assets/kids-cartoon.png}{%
-  \includegraphics[width=\linewidth,height=3.0cm,keepaspectratio]{assets/kids-cartoon.png}%
-}{%
-  \fcolorbox{BridgesLine}{white}{%
-    \begin{minipage}[c][3.0cm][c]{\linewidth}
-      \centering
-      {\large\bfseries\color{BridgesGrey}Cartoon kids illustration}\par
-      {\scriptsize replace with a friendly family / kids artwork}
-    \end{minipage}%
-  }%
-}
-
-\vspace{0.45em}
-\sectiontitle{Weekly overview by pillar}
-
-\begin{tabularx}{\linewidth}{@{}p{2.55cm} p{3.0cm} Y p{1.55cm} p{2.55cm}@{}}
-\rowcolor{BridgesNavy}
-\color{white}\textbf{Pillar} & \color{white}\textbf{Current skills} & \color{white}\textbf{Activities} & \color{white}\textbf{Minutes} & \color{white}\textbf{Next step} \\
-\midrule
-Languages & Comfortable listening in Thai; hesitant to speak. & Flash cards $\times$ 4\\ Solo reading $\times$ 2 & 0 & More short speaking practice. \\
-Mathematics &  &  & 0 &  \\
-English &  &  & 0 &  \\
-Humanities &  &  & 0 &  \\
-Practical / Life &  &  & 0 &  \\
-Health / Physical &  &  & 0 &  \\
-\end{tabularx}
+\begin{minipage}[t]{0.46\textwidth}
+  \vspace{0pt}
+  \StudentPhoto{\STIXTwoText\fontsize{31}{32}\selectfont\bfseries\color{Navy}\StudentName\hspace{0.12em}\DoodleStar}\par
+  \vspace{0.02em}
+  {\normalsize\bfseries\color{Muted}\ReportTitle}\par
+  \vspace{0.16em}
+  {\normalsize\ReportWeek}\par
+  \vspace{0.25em}
+  \SoftNote{A steady week of practice, reading, map work, movement, and family life skills.}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.34\textwidth}
-\sectiontitle{Week at a glance}
-\statcard{Pillars covered}{0/6}\hfill\statcard{Active days}{0}
-
-\vspace{0.25em}
-\statcard{Total activities}{0}\hfill\statcard{Books read}{0}
-
-\vspace{0.45em}
-\sectiontitle{Books \& reading}
-\panel{BridgesBlue}{
-\bookitem{}{Book title here}{Child name here}
-\bookitem{}{Book title here}{Child name here}
-\bookitem{}{Book title here}{Child name here}
-}
-
-\vspace{0.35em}
-\sectiontitle{Work evidence}
-\panel{BridgesTeal}{
-\smalltitle{Copywork / artefacts}\par
-\vspace{0.2em}
-\noindent\evidenceitem\hspace{0.25em}\evidenceitem\hspace{0.25em}\evidenceitem
-\par\vspace{0.35em}
-{\scriptsize\color{BridgesGrey}Use this for a few best evidence photos, like copywork or a workbook page.}
-}
+\begin{minipage}[t]{0.51\textwidth}
+  \vspace{0pt}
+  \GlancePanel
 \end{minipage}
 
-\vspace{0.5em}
+\vspace{0.22em}
 
-\sectiontitle{Reflection}
+\begin{minipage}[t]{0.685\textwidth}
+  \vspace{0pt}
+  {\centering\PanelTitle{Mint}{Navy}{Six-Pillar Learning Record}\par}
+  \vspace{0.18em}
 
-\noindent\begin{minipage}[t]{0.323\textwidth}
-\panel{BridgesBlue}{
-\smalltitle{Key Progress}\par
-\vspace{0.2em}
-{\scriptsize\color{BridgesGrey}
-\begin{itemize}
-  \item Which skills improved?
-  \item What was strengthened or consolidated?
-\end{itemize}
-}
-}
+  \arrayrulecolor{Line}
+  \fontsize{7.4}{8.05}\selectfont
+  \begin{tabularx}{\linewidth}{|L{2.55cm}|Y|Y|C{1.35cm}|}
+  \hline
+  \rowcolor{Navy!94}
+  \rule{0pt}{0.52cm}\color{white}\bfseries Pillar
+  & \color{white}\bfseries Current Level
+  & \color{white}\bfseries Activities This Week
+  & \color{white}\bfseries Total Minutes\\
+  \hline
+  \rowcolor{Sky!35}
+  \PillarRow
+    {\PillarMark{SoftBlue}{\IconBook}{1. Languages}}
+    {\LevelNotes{Comfortable with sentence reading cards.}{Clear speech and expression are developing.}{Spelling and morphology improve with repetition.}}
+    {\ActivityNotes{Flashcards: vocab, spelling, morphology, grammar x 4}{Solo reading x 5}{Reading to Juliet x 2}}
+    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}165}\par{\tiny min}}
+  \rowcolor{Paper}
+  \PillarRow
+    {\PillarMark{SoftGreen}{\IconCalc}{2. Mathematical and Scientific Reasoning}}
+    {\LevelNotes{Easier arithmetic facts are mostly fluent.}{3s--9s multiplication still needs practice.}{Can work through frustration with support.}}
+    {\ActivityNotes{Arithmetic practice x 4}{Multiplication flashcards x 3}{Word problems x 2}}
+    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}115}\par{\tiny min}}
+  \rowcolor{Peach!36}
+  \PillarRow
+    {\PillarMark{SoftOrange}{\IconGlobe}{3. Humanities}}
+    {\LevelNotes{Map confidence is growing.}{Country names are starting to stick.}{Perseverance was visible during hard work.}}
+    {\ActivityNotes{Map skills x 2}{Country naming x 2}{History read-aloud discussion x 1}}
+    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}70}\par{\tiny min}}
+  \rowcolor{Lavender!38}
+  \PillarRow
+    {\PillarMark{SoftPurple}{\IconPalette}{4. Arts and Making}}
+    {\LevelNotes{Enjoys visual prompts.}{Creative output is stronger with short starts.}{Needs more regular evidence captured.}}
+    {\ActivityNotes{Sketching x 1}{Music practice x 2}{Story idea notebook x 1}}
+    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}55}\par{\tiny min}}
+  \rowcolor{Sky!28}
+  \PillarRow
+    {\PillarMark{SoftRed}{\IconRun}{5. Health and Physical Readiness}}
+    {\LevelNotes{Outdoor movement supports focus.}{Coordination work is steady.}{Energy is best after short breaks.}}
+    {\ActivityNotes{Outdoor play x 3}{Stretching x 2}{Healthy habits check-in x 2}}
+    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}85}\par{\tiny min}}
+  \rowcolor{Mint!42}
+  \PillarRow
+    {\PillarMark{SoftTeal}{\IconHome}{6. Practical Life and Household Competence}}
+    {\LevelNotes{Independence is emerging in routines.}{Works best with clear, small tasks.}{Duration was not recorded this week.}}
+    {\ActivityNotes{Kitchen helper x 2}{Room reset x 2}{Laundry sorting x 1}}
+    {\NoMinutes\par{\tiny not recorded}}
+  \end{tabularx}
+  \normalsize
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.323\textwidth}
-\panel{BridgesGold}{
-\smalltitle{What Worked / What Didn't}\par
-\vspace{0.2em}
-{\scriptsize\color{BridgesGrey}
-\begin{itemize}
-  \item Engagement and attitude
-  \item What helped learning this week
-  \item What didn't work yet
-\end{itemize}
-}
-}
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.323\textwidth}
-\panel{BridgesRose}{
-\smalltitle{What's Next}\par
-\vspace{0.2em}
-{\scriptsize\color{BridgesGrey}
-\begin{itemize}
-  \item Next priority for each active pillar
-  \item Any support or adjustment needed
-\end{itemize}
-}
-}
+\begin{minipage}[t]{0.295\textwidth}
+  \vspace{0pt}
+  \begin{tcolorbox}[
+    title={\DoodleBook\ Books \& Reading},
+    colback=Lavender!45,
+    colframe=Line,
+    colbacktitle=Lavender,
+    coltitle=Navy,
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.35pt,
+    left=1.8mm,
+    right=1.8mm,
+    top=1.4mm,
+    bottom=1.1mm,
+    height=5.65cm
+  ]
+    \BookItem{assets/books/wind-in-the-willows.png}{The Wind in the Willows}{Kenneth Grahame}{Parent read-aloud}{Listened and discussed characters.}
+    \BookItem{assets/books/charlottes-web.png}{Charlotte's Web}{E. B. White}{Solo reading}{Short independent chapter practice.}
+  \end{tcolorbox}
+
+  \vspace{0.25em}
+
+  \begin{tcolorbox}[
+    title={\DoodleCamera\ Work Evidence},
+    colback=Sky,
+    colframe=Line,
+    colbacktitle=Sky,
+    coltitle=Navy,
+    fonttitle=\bfseries,
+    arc=2mm,
+    boxrule=0.35pt,
+    left=1.8mm,
+    right=1.8mm,
+    top=1.4mm,
+    bottom=1.1mm,
+    height=5.15cm
+  ]
+    \EvidenceItem{assets/evidence/copywork.png}{Copywork}{\hfill}
+    \EvidenceItem{assets/evidence/math-work.png}{Math Work}{}\par\vspace{0.35em}
+    \EvidenceItem{assets/evidence/map-practice.png}{Map Practice}{\hfill}
+    \EvidenceItem{assets/evidence/nature-journal.png}{Nature Journal}{}
+  \end{tcolorbox}
+
+  \vspace{0.25em}
+  \WeeklyPatternCard
 \end{minipage}
 
-\vspace{0.25em}
-{\scriptsize\color{BridgesGrey}Template notes: keep the table compact; use the right column for books, reading, and evidence; replace the cartoon and covers with actual images when ready.}
+\vspace{0.18em}
+
+\begin{tcolorbox}[
+  title={Next Week's Focus},
+  colback=Paper,
+  colframe=Line,
+  colbacktitle=Peach,
+  coltitle=Navy,
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.35pt,
+  left=2mm,
+  right=2mm,
+  top=1.0mm,
+  bottom=1.0mm,
+  height=2.38cm
+]
+  \FocusCard{Sky}{1}{Reading}{Keep short daily reading and clear speech practice.}\hfill
+  \FocusCard{Mint}{2}{Maths}{Build multiplication facts, especially 3s--9s.}\hfill
+  \FocusCard{Peach}{3}{Humanities}{Continue short map practice with confidence focus.}\hfill
+  \FocusCard{Lavender}{4}{Records}{Capture one evidence item from creative or practical-life work.}
+\end{tcolorbox}
+
+\vspace{0.14em}
+
+\begin{tcolorbox}[
+  title={\DoodleLeaf\ End-of-Week Summary},
+  colback=Cream,
+  colframe=Line,
+  colbacktitle=Mint,
+  coltitle=Navy,
+  fonttitle=\bfseries,
+  arc=2mm,
+  boxrule=0.35pt,
+  left=2.2mm,
+  right=2.2mm,
+  top=0.9mm,
+  bottom=0.9mm,
+  height=2.0cm
+]
+  \small\linespread{1.06}\selectfont
+  Steady week with good coverage across all six pillars. Reading and maths were the most consistent areas, and Charles showed perseverance during harder map work. Evidence capture should improve next week, especially for creative and practical-life work.
+\end{tcolorbox}
 
 \end{document}
