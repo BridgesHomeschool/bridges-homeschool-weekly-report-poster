@@ -1,0 +1,184 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.18}
+
+\definecolor{BridgesNavy}{HTML}{101A29}
+\definecolor{BridgesCream}{HTML}{FFF3E9}
+\definecolor{BridgesInk}{HTML}{111827}
+\definecolor{BridgesGrey}{HTML}{6B7280}
+\definecolor{BridgesLine}{HTML}{CBD5E1}
+\definecolor{BridgesBlue}{HTML}{EAF2FB}
+\definecolor{BridgesTeal}{HTML}{E8F7F5}
+\definecolor{BridgesGold}{HTML}{FFF3D9}
+\definecolor{BridgesRose}{HTML}{FBEAEC}
+
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcommand{\sectiontitle}[1]{\vspace{0.1em}{\large\bfseries\color{BridgesNavy}#1}\par\vspace{0.25em}}
+\newcommand{\smalltitle}[1]{{\small\bfseries\color{BridgesGrey}#1}}
+\newcommand{\placeholderbox}[2]{%
+  \fcolorbox{BridgesLine}{white}{%
+    \begin{minipage}[c][#1][c]{#2}
+      \centering\scriptsize\color{BridgesGrey}placeholder
+    \end{minipage}%
+  }%
+}
+\newcommand{\statcard}[2]{%
+  \fcolorbox{BridgesLine}{BridgesCream}{%
+    \begin{minipage}[c][1.45cm][c]{0.455\linewidth}
+      \centering
+      {\scriptsize\color{BridgesGrey}\bfseries #1}\par
+      \vspace{0.12em}
+      {\Large\bfseries\color{BridgesInk}#2}
+    \end{minipage}%
+  }%
+}
+\newcommand{\panel}[2]{%
+  \fcolorbox{BridgesLine}{#1}{%
+    \begin{minipage}[t]{\linewidth}
+      \vspace{0.35em}
+      #2
+      \vspace{0.35em}
+    \end{minipage}%
+  }%
+}
+\newcommand{\bookitem}[3]{%
+  \noindent\begin{minipage}[t]{\linewidth}
+    \noindent\begin{minipage}[c]{1.4cm}
+      \placeholderbox{1.4cm}{1.4cm}
+    \end{minipage}%
+    \hfill\begin{minipage}[c]{\dimexpr\linewidth-1.55cm\relax}
+      {\small\bfseries #2}\par
+      {\scriptsize\color{BridgesGrey}#3}
+    \end{minipage}
+  \end{minipage}\par\vspace{0.35em}
+}
+\newcommand{\evidenceitem}{\placeholderbox{1.5cm}{1.5cm}}
+
+\begin{document}
+\pagecolor{BridgesCream}
+
+\begin{center}
+{\Huge\bfseries\color{BridgesNavy} Weekly Report Poster}\par
+\vspace{0.15em}
+{\small\color{BridgesGrey}Name:\ \rule{3.4cm}{0.4pt}\hfill Title:\ \rule{2.9cm}{0.4pt}\hfill Date:\ \rule{2.4cm}{0.4pt}}
+\end{center}
+
+\vspace{0.35em}
+
+\noindent\begin{minipage}[t]{0.63\textwidth}
+\sectiontitle{This week's visual}
+\IfFileExists{assets/kids-cartoon.png}{%
+  \includegraphics[width=\linewidth,height=3.0cm,keepaspectratio]{assets/kids-cartoon.png}%
+}{%
+  \fcolorbox{BridgesLine}{white}{%
+    \begin{minipage}[c][3.0cm][c]{\linewidth}
+      \centering
+      {\large\bfseries\color{BridgesGrey}Cartoon kids illustration}\par
+      {\scriptsize replace with a friendly family / kids artwork}
+    \end{minipage}%
+  }%
+}
+
+\vspace{0.45em}
+\sectiontitle{Weekly overview by pillar}
+
+\begin{tabularx}{\linewidth}{@{}p{2.55cm} p{3.0cm} Y p{1.55cm} p{2.55cm}@{}}
+\rowcolor{BridgesNavy}
+\color{white}\textbf{Pillar} & \color{white}\textbf{Current skills} & \color{white}\textbf{Activities} & \color{white}\textbf{Minutes} & \color{white}\textbf{Next step} \\
+\midrule
+Languages & Comfortable listening in Thai; hesitant to speak. & Flash cards $\times$ 4\\ Solo reading $\times$ 2 & 0 & More short speaking practice. \\
+Mathematics &  &  & 0 &  \\
+English &  &  & 0 &  \\
+Humanities &  &  & 0 &  \\
+Practical / Life &  &  & 0 &  \\
+Health / Physical &  &  & 0 &  \\
+\end{tabularx}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.34\textwidth}
+\sectiontitle{Week at a glance}
+\statcard{Pillars covered}{0/6}\hfill\statcard{Active days}{0}
+
+\vspace{0.25em}
+\statcard{Total activities}{0}\hfill\statcard{Books read}{0}
+
+\vspace{0.45em}
+\sectiontitle{Books \& reading}
+\panel{BridgesBlue}{
+\bookitem{}{Book title here}{Child name here}
+\bookitem{}{Book title here}{Child name here}
+\bookitem{}{Book title here}{Child name here}
+}
+
+\vspace{0.35em}
+\sectiontitle{Work evidence}
+\panel{BridgesTeal}{
+\smalltitle{Copywork / artefacts}\par
+\vspace{0.2em}
+\noindent\evidenceitem\hspace{0.25em}\evidenceitem\hspace{0.25em}\evidenceitem
+\par\vspace{0.35em}
+{\scriptsize\color{BridgesGrey}Use this for a few best evidence photos, like copywork or a workbook page.}
+}
+\end{minipage}
+
+\vspace{0.5em}
+
+\sectiontitle{Reflection}
+
+\noindent\begin{minipage}[t]{0.323\textwidth}
+\panel{BridgesBlue}{
+\smalltitle{Key Progress}\par
+\vspace{0.2em}
+{\scriptsize\color{BridgesGrey}
+\begin{itemize}
+  \item Which skills improved?
+  \item What was strengthened or consolidated?
+\end{itemize}
+}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.323\textwidth}
+\panel{BridgesGold}{
+\smalltitle{What Worked / What Didn't}\par
+\vspace{0.2em}
+{\scriptsize\color{BridgesGrey}
+\begin{itemize}
+  \item Engagement and attitude
+  \item What helped learning this week
+  \item What didn't work yet
+\end{itemize}
+}
+}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.323\textwidth}
+\panel{BridgesRose}{
+\smalltitle{What's Next}\par
+\vspace{0.2em}
+{\scriptsize\color{BridgesGrey}
+\begin{itemize}
+  \item Next priority for each active pillar
+  \item Any support or adjustment needed
+\end{itemize}
+}
+}
+\end{minipage}
+
+\vspace{0.25em}
+{\scriptsize\color{BridgesGrey}Template notes: keep the table compact; use the right column for books, reading, and evidence; replace the cartoon and covers with actual images when ready.}
+
+\end{document}
