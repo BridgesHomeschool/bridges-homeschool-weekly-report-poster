@@ -23,7 +23,17 @@ If you add these files, the template will use them automatically:
 
 ## Build
 
-Use LuaLaTeX and point `TEXINPUTS` at the Bridges brand system:
+Use LuaLaTeX and point `TEXINPUTS` at the Bridges brand system.
+
+Linux / macOS:
+
+```bash
+export TEXMFHOME="$HOME/texmf"
+export TEXINPUTS="/home/lachlan/repos/BridgesHomeschool/core/bridges-brand-system/assets/bridges/tex/classes//:/home/lachlan/repos/BridgesHomeschool/core/bridges-brand-system/assets/bridges/tex/packages//:"
+lualatex -interaction=nonstopmode -halt-on-error weekly-report-poster.tex
+```
+
+Windows / PowerShell:
 
 ```powershell
 $brand = 'F:/vault/projects/homeschool/core/bridges-brand-system/assets/bridges/tex'
@@ -32,3 +42,16 @@ lualatex -interaction=nonstopmode -halt-on-error weekly-report-poster.tex
 ```
 
 The template expects the sibling `bridges-brand-system` repo to be present. It uses the shared Bridges class, fonts, colors, and logo assets.
+
+## Local layout fixture
+
+For layout testing, the repo includes a saved Charles snapshot at
+`fixtures/charles-current-week.yaml`. It mirrors the current poster content
+based on the actual homeschool logs and can be used as a stable test fixture
+when iterating on spacing or typography.
+
+## Child reference assets
+
+The repo also keeps reusable child reference images under
+`assets/children/<child>/`. They are not wired into the poster automatically yet,
+but they are available for local template/layout testing.
