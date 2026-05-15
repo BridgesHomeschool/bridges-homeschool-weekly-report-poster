@@ -42,6 +42,7 @@
 \newcommand{\StudentName}{Charles}
 \newcommand{\ReportTitle}{Weekly Learning Dashboard}
 \newcommand{\ReportWeek}{Week of 11--17 May 2026}
+\newcommand{\StudentReferenceImage}{assets/children/charles/reference.jpg}
 
 \newcommand{\IconBook}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (0,-1.65)..controls(-.65,-1.15)and(-1.35,-1.15)..(-2,-1.45)--(-2,1.55)..controls(-1.25,1.25)and(-.55,1.25)..(0,.75)--cycle;\draw[white] (0,-1.65)..controls(.65,-1.15)and(1.35,-1.15)..(2,-1.45)--(2,1.55)..controls(1.25,1.25)and(.55,1.25)..(0,.75)--cycle;\draw[white] (0,.75)--(0,-1.65);\end{tikzpicture}}
 \newcommand{\IconCalc}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white,rounded corners=1pt] (-1.6,-1.9) rectangle (1.6,1.8);\draw[white] (-1.05,.95)--(1.05,.95);\foreach \x in {-1,0,1}{\foreach \y in {.25,-.55,-1.35}{\fill[white] (\x,\y) circle (.12);}}\end{tikzpicture}}
@@ -120,10 +121,10 @@
 }
 
 \newcommand{\StudentPhoto}{%
-  \IfFileExists{assets/student-photo.png}{%
-    \begin{tikzpicture}
-      \node[circle,draw=Line,line width=0.4pt,inner sep=1pt] {\includegraphics[width=1.55cm,height=1.55cm,keepaspectratio]{assets/student-photo.png}};
-    \end{tikzpicture}\hspace{0.5em}%
+  \IfFileExists{\StudentReferenceImage}{%
+    \begin{tikzpicture}[baseline=-0.55cm]
+      \node[circle,draw=Line,line width=0.45pt,inner sep=0.8pt] {\includegraphics[width=1.38cm,height=1.38cm,keepaspectratio]{\StudentReferenceImage}};
+    \end{tikzpicture}\hspace{0.42em}%
   }{}%
 }
 

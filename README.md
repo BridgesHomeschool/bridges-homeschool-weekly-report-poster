@@ -18,6 +18,7 @@ A portrait A4 LaTeX template for a child-centered weekly homeschool learning sum
 If you add these files, the template will use them automatically:
 
 - `assets/student-photo.png`
+- `assets/children/<child>/reference.jpg`
 - book covers in `assets/books/`
 - evidence thumbnails in `assets/evidence/`
 
@@ -53,5 +54,6 @@ when iterating on spacing or typography.
 ## Child reference assets
 
 The repo also keeps reusable child reference images under
-`assets/children/<child>/`. They are not wired into the poster automatically yet,
-but they are available for local template/layout testing.
+`assets/children/<child>/`. The Charles layout fixture currently points at
+`assets/children/charles/reference.jpg` so the reference portrait appears beside
+his name.
