@@ -205,33 +205,39 @@
   \begin{minipage}[c][1.42cm][c]{\linewidth}
     \centering
     \makebox[\linewidth][c]{\tikz[baseline=-0.5ex]\node[circle,fill=#1,minimum size=0.88cm,text=white,inner sep=0pt] {\scalebox{1.24}{#2}};}\par
-    \vspace{0.12em}
+    \vspace{0.26em}
     \makebox[\linewidth][c]{%
       \begin{minipage}{2.32cm}
-        \centering\fontsize{6.8}{7.2}\selectfont\bfseries\color{Navy}#3%
+        \centering\fontsize{6.3}{6.9}\selectfont\bfseries\color{Navy}\MakeUppercase{#3}%
       \end{minipage}%
     }
   \end{minipage}%
 }
 
 \newcommand{\LevelNotes}[3]{%
-  \begingroup\setlength{\parskip}{0.02em}%
-  {\color{Gold}$\bullet$} #1\par
-  {\color{Gold}$\bullet$} #2\par
-  {\color{Gold}$\bullet$} #3%
-  \endgroup
+  \begin{minipage}[c][1.34cm][c]{\linewidth}
+    \begingroup\setlength{\parskip}{0.04em}%
+    {\color{Gold}$\bullet$} #1\par
+    {\color{Gold}$\bullet$} #2\par
+    {\color{Gold}$\bullet$} #3%
+    \endgroup
+  \end{minipage}%
 }
 
 \newcommand{\ActivityNotes}[3]{%
-  #1\par
-  #2\par
-  #3%
+  \begin{minipage}[c][1.34cm][c]{\linewidth}
+    \begingroup\setlength{\parskip}{0.04em}%
+    \if\relax\detokenize{#1}\relax\else{\color{SoftBlue}$\bullet$} #1\par\fi
+    \if\relax\detokenize{#2}\relax\else{\color{SoftBlue}$\bullet$} #2\par\fi
+    \if\relax\detokenize{#3}\relax\else{\color{SoftBlue}$\bullet$} #3\fi
+    \endgroup
+  \end{minipage}%
 }
 
 \newcommand{\NoMinutes}{\textcolor{Muted}{---}}
 
 \newcommand{\PillarRow}[4]{%
-  \rule[-0.72cm]{0pt}{1.58cm}#1
+  \rule[-0.76cm]{0pt}{1.68cm}#1
   & #2
   & #3
   & #4\\
@@ -272,11 +278,13 @@
     \fcolorbox{Line}{#4}{%
       \begin{minipage}[c][#3][c]{#2}
         \centering
-        {\color{Navy!28}\rule{0.45cm}{0.45pt}}\par
-        \vspace{0.12cm}
-        {\color{Navy!22}\rule{0.28cm}{0.45pt}}\par
-        \vspace{0.1cm}
-        \DoodleBook
+        \begin{tikzpicture}[x=.13cm,y=.13cm,line width=.55pt]
+          \draw[Navy!65] (-1.15,-.75)..controls(-.65,-.52)and(-.25,-.52)..(0,-.72)--(0,.92)..controls(-.4,.7)and(-.78,.7)..(-1.15,.86)--cycle;
+          \draw[Navy!65] (1.15,-.75)..controls(.65,-.52)and(.25,-.52)..(0,-.72)--(0,.92)..controls(.4,.7)and(.78,.7)..(1.15,.86)--cycle;
+          \draw[Navy!65] (0,.92)--(0,-.72);
+          \draw[Navy!28] (-.82,.32)--(-.28,.25);
+          \draw[Navy!28] (.28,.25)--(.82,.32);
+        \end{tikzpicture}
       \end{minipage}%
     }%
     \endgroup
@@ -304,17 +312,25 @@
 }
 
 \newcommand{\BookItem}[5]{%
-  \begin{minipage}[t]{\linewidth}
-    \begin{minipage}[t]{1.05cm}
-      \BookCover{#1}{0.96cm}{1.08cm}{Cream}
+  \begin{tcolorbox}[
+    colback=Paper,
+    colframe=Lavender!70,
+    boxrule=0.25pt,
+    arc=1.4mm,
+    left=1mm,
+    right=1mm,
+    top=0.75mm,
+    bottom=0.75mm
+  ]
+    \begin{minipage}[c]{0.78cm}
+      \BookCover{#1}{0.72cm}{0.82cm}{Cream}
     \end{minipage}\hfill
-    \begin{minipage}[t]{\dimexpr\linewidth-1.22cm\relax}
+    \begin{minipage}[c]{\dimexpr\linewidth-0.96cm\relax}
       {\tiny\bfseries\color{Navy}#2}\par
-      {\tiny #3}\par
-      {\tiny\itshape\color{Muted}#4}\par
+      {\tiny\color{Ink}#3}\hfill{\tiny\itshape\color{Muted}#4}\par
       {\tiny #5}
     \end{minipage}
-  \end{minipage}\par\vspace{0.18em}
+  \end{tcolorbox}\vspace{0.12em}
 }
 
 \newcommand{\EvidenceItem}[3]{%
@@ -342,9 +358,25 @@
     rounded corners=3pt,
     inner xsep=4pt,
     inner ysep=1.5pt,
-    text width=2.25cm,
+    text width=4.95cm,
     align=left
   ] (n) {\tiny #2};%
+}
+
+\newcommand{\PatternRow}[2]{%
+  \begin{tcolorbox}[
+    colback=Paper,
+    colframe=Line,
+    boxrule=0.25pt,
+    arc=1.3mm,
+    left=1.2mm,
+    right=1.2mm,
+    top=0.55mm,
+    bottom=0.55mm
+  ]
+    {\tiny\bfseries\color{Muted}\MakeUppercase{#1}}\par
+    {\tiny\color{Navy}#2}
+  \end{tcolorbox}\vspace{0.1em}%
 }
 
 \newcommand{\WeeklyPatternCard}{%
@@ -364,16 +396,13 @@
     height=3.25cm
   ]
     \scriptsize
-    {\color{Muted}\textbf{Active days}}\par
+    {\tiny\bfseries\color{Muted}\MakeUppercase{Active days}}\par
+    \vspace{0.08em}
     \PatternPill{Mon}\ \PatternPill{Tue}\ \PatternPill{Wed}\ \PatternPill{Thu}\ \PatternPill{Fri}\par
-    \vspace{0.32em}
-    \PatternChip{Paper}{\textbf{Most consistent}\par Languages}\hfill
-    \PatternChip{Paper}{\textbf{Strongest days}\par Tue / Fri}\par
-    \vspace{0.16em}
-    \PatternChip{Paper}{\textbf{Lightest areas}\par Arts evidence}\hfill
-    \PatternChip{Paper}{\textbf{Recordkeeping}\par Practical Life}\par
-    \vspace{0.28em}
-    {\itshape\color{Muted}Learning was spread across five active days.}
+    \vspace{0.22em}
+    \PatternRow{Most consistent}{Languages}
+    \PatternRow{Strongest days}{Tue / Fri}
+    \PatternRow{Recordkeeping focus}{Evidence and practical-life minutes}
   \end{tcolorbox}%
 }
 
