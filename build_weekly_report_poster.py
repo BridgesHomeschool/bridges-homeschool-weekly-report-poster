@@ -190,8 +190,6 @@ def render_weekly_pattern(active_days: int, sections: list[dict[str, Any]]) -> s
     \PatternRow{{Active days}}{{{tex_escape(active_days)}}}
     \vspace{{0.13em}}
     \PatternRow{{Most consistent}}{{{tex_escape(most)}}}
-    \vspace{{0.13em}}
-    \PatternRow{{Records focus}}{{Minutes + samples}}
   \end{{tcolorbox}}%
 }}
 """
