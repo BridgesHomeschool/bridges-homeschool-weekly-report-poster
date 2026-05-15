@@ -88,15 +88,6 @@
       ([xshift=0.28cm,yshift=-0.28cm]current page.north west)
       rectangle
       ([xshift=-0.28cm,yshift=0.28cm]current page.south east);
-    \fill[Mint] ([xshift=0.72cm,yshift=-0.55cm]current page.north west) circle (0.045cm);
-    \fill[Sun] ([xshift=1.05cm,yshift=-0.82cm]current page.north west) circle (0.035cm);
-    \fill[Sky] ([xshift=-0.8cm,yshift=-0.56cm]current page.north east) circle (0.04cm);
-    \node[anchor=south,inner sep=0pt] at ([yshift=0.47cm]current page.south) {%
-      \IfFileExists{\bridgespath{branding/derived/logo-blackwhite.pdf}}{%
-        \includegraphics[height=0.32cm]{\bridgespath{branding/derived/logo-blackwhite.pdf}}%
-      }{{\scriptsize\bfseries BRIDGES}}%
-      \hspace{1em}{\scriptsize\color{Muted}Rooted in curiosity. Guided by love. Learning for life.}%
-    };
   \end{tikzpicture}%
 }
 
@@ -108,13 +99,18 @@
   }{}%
 }
 
-\newcommand{\Metric}[3]{%
+\newcommand{\MetricIcon}[2]{%
+  \tikz[baseline=-0.8ex]\node[circle,fill=#1,minimum size=0.62cm,inner sep=0pt] {\scalebox{1.14}{#2}};%
+}
+
+\newcommand{\Metric}[4]{%
   \begin{minipage}[c]{0.155\linewidth}
     \centering
-    \tikz[baseline=-0.6ex]\node[circle,fill=Navy,minimum size=0.36cm,inner sep=0pt] {#1};\par
-    \vspace{0.03em}
-    {\fontsize{13}{13}\selectfont\bfseries\color{Navy}#2}\par
-    {\tiny\bfseries\color{Muted}\MakeUppercase{#3}}
+    \MetricIcon{#1}{#2}\par
+    \vspace{0.12em}
+    {\fontsize{13}{13}\selectfont\bfseries\color{Navy}#3}\par
+    \vspace{-0.03em}
+    {\tiny\bfseries\color{Muted}\MakeUppercase{#4}}
   \end{minipage}%
 }
 
@@ -137,11 +133,11 @@
     top=0.9mm,
     bottom=0.9mm
   ]
-    \Metric{\IconBook}{6}{Pillars}\MetricSep
-    \Metric{\IconCalc}{22}{Activities}\MetricSep
-    \Metric{\IconRun}{7.5h}{Logged}\MetricSep
-    \Metric{\IconBook}{2}{Books}\MetricSep
-    \Metric{\IconCamera}{4}{Evidence}\par
+    \Metric{SoftBlue}{\IconBook}{6}{Pillars}\MetricSep
+    \Metric{SoftGreen}{\IconCalc}{22}{Activities}\MetricSep
+    \Metric{SoftRed}{\IconRun}{7.5h}{Logged}\MetricSep
+    \Metric{SoftOrange}{\IconBook}{2}{Books}\MetricSep
+    \Metric{SoftTeal}{\IconCamera}{4}{Evidence}\par
     \vspace{0.2em}
     \begin{tcolorbox}[
       colback=Paper,
@@ -179,12 +175,12 @@
 }
 
 \newcommand{\PillarMark}[3]{%
-  \begin{tikzpicture}[baseline=-0.55ex]
-    \node[circle,fill=#1,minimum size=0.64cm,text=white] (icon) {#2};
-    \node[anchor=west,text width=1.32cm,align=left] at ([xshift=0.07cm]icon.east) {%
-      \fontsize{6.4}{6.9}\selectfont\textbf{\color{Navy}#3}%
-    };
-  \end{tikzpicture}%
+  \begin{minipage}[c][1.42cm][c]{\linewidth}
+    \centering
+    \tikz[baseline=-0.5ex]\node[circle,fill=#1,minimum size=0.88cm,text=white,inner sep=0pt] {\scalebox{1.24}{#2}};\par
+    \vspace{0.12em}
+    {\fontsize{6.8}{7.2}\selectfont\bfseries\color{Navy}#3}
+  \end{minipage}%
 }
 
 \newcommand{\LevelNotes}[3]{%
@@ -403,37 +399,37 @@
   \hline
   \rowcolor{Sky!35}
   \PillarRow
-    {\PillarMark{SoftBlue}{\IconBook}{1. Languages}}
+    {\PillarMark{SoftBlue}{\IconBook}{Languages}}
     {\LevelNotes{Comfortable with sentence reading cards.}{Clear speech and expression are developing.}{Spelling and morphology improve with repetition.}}
     {\ActivityNotes{Flashcards: vocab, spelling, morphology, grammar x 4}{Solo reading x 5}{Reading to Juliet x 2}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}165}\par{\tiny min}}
   \rowcolor{Paper}
   \PillarRow
-    {\PillarMark{SoftGreen}{\IconCalc}{2. Mathematical and Scientific Reasoning}}
+    {\PillarMark{SoftGreen}{\IconCalc}{Mathematical and Scientific Reasoning}}
     {\LevelNotes{Easier arithmetic facts are mostly fluent.}{3s--9s multiplication still needs practice.}{Can work through frustration with support.}}
     {\ActivityNotes{Arithmetic practice x 4}{Multiplication flashcards x 3}{Word problems x 2}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}115}\par{\tiny min}}
   \rowcolor{Peach!36}
   \PillarRow
-    {\PillarMark{SoftOrange}{\IconGlobe}{3. Humanities}}
+    {\PillarMark{SoftOrange}{\IconGlobe}{Humanities}}
     {\LevelNotes{Map confidence is growing.}{Country names are starting to stick.}{Perseverance was visible during hard work.}}
     {\ActivityNotes{Map skills x 2}{Country naming x 2}{History read-aloud discussion x 1}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}70}\par{\tiny min}}
   \rowcolor{Lavender!38}
   \PillarRow
-    {\PillarMark{SoftPurple}{\IconPalette}{4. Arts and Making}}
+    {\PillarMark{SoftPurple}{\IconPalette}{Arts and Making}}
     {\LevelNotes{Enjoys visual prompts.}{Creative output is stronger with short starts.}{Needs more regular evidence captured.}}
     {\ActivityNotes{Sketching x 1}{Music practice x 2}{Story idea notebook x 1}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}55}\par{\tiny min}}
   \rowcolor{Sky!28}
   \PillarRow
-    {\PillarMark{SoftRed}{\IconRun}{5. Health and Physical Readiness}}
+    {\PillarMark{SoftRed}{\IconRun}{Health and Physical Readiness}}
     {\LevelNotes{Outdoor movement supports focus.}{Coordination work is steady.}{Energy is best after short breaks.}}
     {\ActivityNotes{Outdoor play x 3}{Stretching x 2}{Healthy habits check-in x 2}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}85}\par{\tiny min}}
   \rowcolor{Mint!42}
   \PillarRow
-    {\PillarMark{SoftTeal}{\IconHome}{6. Practical Life and Household Competence}}
+    {\PillarMark{SoftTeal}{\IconHome}{Practical Life and Household Competence}}
     {\LevelNotes{Independence is emerging in routines.}{Works best with clear, small tasks.}{Duration was not recorded this week.}}
     {\ActivityNotes{Kitchen helper x 2}{Room reset x 2}{Laundry sorting x 1}}
     {\NoMinutes\par{\tiny not recorded}}
