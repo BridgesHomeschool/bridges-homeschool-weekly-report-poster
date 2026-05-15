@@ -51,6 +51,34 @@
 \newcommand{\IconHome}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (-1.7,-.2)--(0,1.45)--(1.7,-.2);\draw[white] (-1.25,-.15)--(-1.25,-1.75)--(1.25,-1.75)--(1.25,-.15);\draw[white] (-.35,-1.75)--(-.35,-.75)--(.35,-.75)--(.35,-1.75);\end{tikzpicture}}
 \newcommand{\IconCamera}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white,rounded corners=1pt] (-1.9,-1.25) rectangle (1.9,1.15);\draw[white] (-.95,1.15)--(-.65,1.65)--(.65,1.65)--(.95,1.15);\draw[white] (0,0) circle (.68);\fill[white] (1.35,.6) circle (.12);\end{tikzpicture}}
 
+\newcommand{\MetricPillarsIcon}{%
+  \begin{tikzpicture}[x=.16cm,y=.16cm,line width=.9pt]
+    \foreach \x/\y in {-1/1,0/1,1/1,-1/0,0/0,1/0}{\draw[white,rounded corners=.8pt] (\x-.34,\y-.34) rectangle (\x+.34,\y+.34);}
+  \end{tikzpicture}%
+}
+\newcommand{\MetricActivitiesIcon}{%
+  \begin{tikzpicture}[x=.16cm,y=.16cm,line width=.9pt]
+    \draw[white,rounded corners=1pt] (-1.35,-1.15) rectangle (1.35,1.35);
+    \foreach \y in {.65,0,-.65}{\draw[white] (-.65,\y)--(.9,\y);\fill[white] (-.95,\y) circle (.09);}
+    \draw[white] (-.75,1.35)--(-.55,1.72)--(.55,1.72)--(.75,1.35);
+  \end{tikzpicture}%
+}
+\newcommand{\MetricMinutesIcon}{%
+  \begin{tikzpicture}[x=.16cm,y=.16cm,line width=.9pt]
+    \draw[white] (0,0) circle (1.45);
+    \draw[white] (0,0)--(0,.82);
+    \draw[white] (0,0)--(.72,-.42);
+    \foreach \a in {90,0,-90,180}{\fill[white] (\a:1.12) circle (.07);}
+  \end{tikzpicture}%
+}
+\newcommand{\MetricBooksIcon}{%
+  \begin{tikzpicture}[x=.16cm,y=.16cm,line width=.9pt]
+    \draw[white] (-.12,-1.25)..controls(-.62,-.9)and(-1.1,-.9)..(-1.55,-1.15)--(-1.55,1.2)..controls(-.95,.98)and(-.45,.98)..(-.12,.58)--cycle;
+    \draw[white] (.12,-1.25)..controls(.62,-.9)and(1.1,-.9)..(1.55,-1.15)--(1.55,1.2)..controls(.95,.98)and(.45,.98)..(.12,.58)--cycle;
+    \draw[white] (0,.58)--(0,-1.25);
+  \end{tikzpicture}%
+}
+
 \newcommand{\DoodleLeaf}{%
   \begin{tikzpicture}[x=.12cm,y=.12cm,line width=.55pt,baseline=-0.4ex]
     \draw[SoftGreen] (-.2,-1.2)..controls(.25,-.25)and(.9,.25)..(1.65,.7);
@@ -100,14 +128,14 @@
 }
 
 \newcommand{\MetricIcon}[2]{%
-  \tikz[baseline=-0.8ex]\node[circle,fill=#1,minimum size=0.62cm,inner sep=0pt] {\scalebox{1.14}{#2}};%
+  \tikz[baseline=-0.8ex]\node[circle,fill=#1,minimum size=0.72cm,inner sep=0pt] {#2};%
 }
 
 \newcommand{\Metric}[4]{%
-  \begin{minipage}[c]{0.155\linewidth}
+  \begin{minipage}[c]{0.205\linewidth}
     \centering
     \MetricIcon{#1}{#2}\par
-    \vspace{0.12em}
+    \vspace{0.16em}
     {\fontsize{13}{13}\selectfont\bfseries\color{Navy}#3}\par
     \vspace{-0.03em}
     {\tiny\bfseries\color{Muted}\MakeUppercase{#4}}
@@ -115,7 +143,7 @@
 }
 
 \newcommand{\MetricSep}{%
-  \hfill{\color{Line}\vrule width 0.35pt height 1.05cm}\hfill%
+  \hfill{\color{Line}\vrule width 0.35pt height 1.08cm}\hfill%
 }
 
 \newcommand{\GlancePanel}{%
@@ -133,11 +161,10 @@
     top=0.9mm,
     bottom=0.9mm
   ]
-    \Metric{SoftBlue}{\IconBook}{6}{Pillars}\MetricSep
-    \Metric{SoftGreen}{\IconCalc}{22}{Activities}\MetricSep
-    \Metric{SoftRed}{\IconRun}{7.5h}{Logged}\MetricSep
-    \Metric{SoftOrange}{\IconBook}{2}{Books}\MetricSep
-    \Metric{SoftTeal}{\IconCamera}{4}{Evidence}\par
+    \Metric{SoftBlue}{\MetricPillarsIcon}{6}{Pillars}\MetricSep
+    \Metric{SoftGreen}{\MetricActivitiesIcon}{22}{Activities}\MetricSep
+    \Metric{SoftRed}{\MetricMinutesIcon}{7.5h}{Logged}\MetricSep
+    \Metric{SoftOrange}{\MetricBooksIcon}{2}{Books}\par
     \vspace{0.2em}
     \begin{tcolorbox}[
       colback=Paper,
@@ -177,9 +204,13 @@
 \newcommand{\PillarMark}[3]{%
   \begin{minipage}[c][1.42cm][c]{\linewidth}
     \centering
-    \tikz[baseline=-0.5ex]\node[circle,fill=#1,minimum size=0.88cm,text=white,inner sep=0pt] {\scalebox{1.24}{#2}};\par
+    \makebox[\linewidth][c]{\tikz[baseline=-0.5ex]\node[circle,fill=#1,minimum size=0.88cm,text=white,inner sep=0pt] {\scalebox{1.24}{#2}};}\par
     \vspace{0.12em}
-    {\fontsize{6.8}{7.2}\selectfont\bfseries\color{Navy}#3}
+    \makebox[\linewidth][c]{%
+      \begin{minipage}{2.32cm}
+        \centering\fontsize{6.8}{7.2}\selectfont\bfseries\color{Navy}#3%
+      \end{minipage}%
+    }
   \end{minipage}%
 }
 
