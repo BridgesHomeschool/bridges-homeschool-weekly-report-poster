@@ -375,32 +375,8 @@
   ] (n) {\tiny\bfseries #1};%
 }
 
-\newcommand{\PatternChip}[2]{%
-  \tikz[baseline=(n.base)]\node[
-    fill=#1,
-    draw=Line,
-    rounded corners=3pt,
-    inner xsep=4pt,
-    inner ysep=1.5pt,
-    text width=4.95cm,
-    align=left
-  ] (n) {\tiny #2};%
-}
-
 \newcommand{\PatternRow}[2]{%
-  \begin{tcolorbox}[
-    colback=Paper,
-    colframe=Line,
-    boxrule=0.25pt,
-    arc=1.3mm,
-    left=1.2mm,
-    right=1.2mm,
-    top=0.42mm,
-    bottom=0.42mm
-  ]
-    {\tiny\bfseries\color{Muted}\MakeUppercase{#1}}\par
-    {\tiny\color{Navy}#2}
-  \end{tcolorbox}\vspace{0.1em}%
+  {\tiny\bfseries\color{Muted}\MakeUppercase{#1}}\hfill{\tiny\bfseries\color{Navy}#2}\par
 }
 
 \newcommand{\WeeklyPatternCard}{%
@@ -415,30 +391,31 @@
     boxrule=0.35pt,
     left=1.8mm,
     right=1.8mm,
-    top=1.4mm,
-    bottom=1.1mm,
-    height=2.95cm
+    top=0.9mm,
+    bottom=0.8mm,
+    height=2.55cm
   ]
     \scriptsize
     {\tiny\bfseries\color{Muted}\MakeUppercase{Active days}}\par
-    \vspace{0.08em}
+    \vspace{0.04em}
     \PatternPill{Mon}\ \PatternPill{Tue}\ \PatternPill{Wed}\ \PatternPill{Thu}\ \PatternPill{Fri}\par
-    \vspace{0.22em}
+    \vspace{0.18em}
     \PatternRow{Most consistent}{Languages}
+    \vspace{0.08em}
     \PatternRow{Strongest days}{Tue / Fri}
-    \PatternRow{Recordkeeping focus}{Evidence and practical-life minutes}
+    \vspace{0.08em}
+    \PatternRow{Records focus}{Evidence}
   \end{tcolorbox}%
 }
 
 \newcommand{\FocusCard}[4]{%
   \begin{minipage}[t]{0.24\linewidth}
     \fcolorbox{Line}{#1}{%
-      \begin{minipage}[t][1.62cm][t]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+      \begin{minipage}[c][0.82cm][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
         \RaggedRight
-        \tikz[baseline=(n.base)]\node[circle,fill=Navy,text=white,minimum size=0.46cm,inner sep=0pt] (n) {\scriptsize\bfseries #2};
-        \hspace{0.25em}{\scriptsize\bfseries\color{Navy}#3}\par
-        \vspace{0.08em}
-        {\scriptsize #4}
+        \tikz[baseline=(n.base)]\node[circle,fill=Navy,text=white,minimum size=0.38cm,inner sep=0pt] (n) {\tiny\bfseries #2};
+        \hspace{0.2em}{\scriptsize\bfseries\color{Navy}#3}\par
+        {\tiny #4}
       \end{minipage}%
     }%
   \end{minipage}%
@@ -487,31 +464,31 @@
   \rowcolor{Paper}
   \PillarRow
     {\PillarMark{SoftGreen}{\IconCalc}{Mathematical and Scientific Reasoning}}
-    {\LevelNotes{Easier arithmetic facts are mostly fluent.}{3s--9s multiplication still needs practice.}{Can work through frustration with support.}}
-    {\ActivityNotes{Arithmetic practice x 4}{Multiplication flashcards x 3}{Word problems x 2}}
+    {\LevelNotes{Arithmetic facts mostly fluent.}{Multiplication needs practice.}{Persistence is improving.}}
+    {\ActivityNotes{Arithmetic practice x 4}{Multiplication cards x 3}{Word problems x 2}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}115}\par{\tiny min}}
   \rowcolor{Peach!36}
   \PillarRow
     {\PillarMark{SoftOrange}{\IconGlobe}{Humanities}}
-    {\LevelNotes{Map confidence is growing.}{Country names are starting to stick.}{Perseverance was visible during hard work.}}
-    {\ActivityNotes{Map skills x 2}{Country naming x 2}{History read-aloud discussion x 1}}
+    {\LevelNotes{Map confidence is growing.}{Country names are sticking.}{Discussion recall is improving.}}
+    {\ActivityNotes{Map skills x 2}{Country naming x 2}{History discussion x 1}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}70}\par{\tiny min}}
   \rowcolor{Lavender!38}
   \PillarRow
     {\PillarMark{SoftPurple}{\IconPalette}{Arts and Making}}
-    {\LevelNotes{Enjoys visual prompts.}{Creative output is stronger with short starts.}{Needs more regular evidence captured.}}
-    {\ActivityNotes{Sketching x 1}{Music practice x 2}{Story idea notebook x 1}}
+    {\LevelNotes{Enjoys visual prompts.}{Short starts help.}{More evidence needed.}}
+    {\ActivityNotes{Sketching x 1}{Music practice x 2}{Story notebook x 1}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}55}\par{\tiny min}}
   \rowcolor{Sky!28}
   \PillarRow
     {\PillarMark{SoftRed}{\IconRun}{Health and Physical Readiness}}
-    {\LevelNotes{Outdoor movement supports focus.}{Coordination work is steady.}{Energy is best after short breaks.}}
-    {\ActivityNotes{Outdoor play x 3}{Stretching x 2}{Healthy habits check-in x 2}}
+    {\LevelNotes{Outdoor movement helps focus.}{Coordination work is steady.}{Breaks support energy.}}
+    {\ActivityNotes{Outdoor play x 3}{Stretching x 2}{Habits check-in x 2}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}85}\par{\tiny min}}
   \rowcolor{Mint!42}
   \PillarRow
     {\PillarMark{SoftTeal}{\IconHome}{Practical Life and Household Competence}}
-    {\LevelNotes{Independence is emerging in routines.}{Works best with clear, small tasks.}{Duration was not recorded this week.}}
+    {\LevelNotes{Routine independence is growing.}{Small tasks work best.}{Duration not recorded.}}
     {\ActivityNotes{Kitchen helper x 2}{Room reset x 2}{Laundry sorting x 1}}
     {\NoMinutes\par{\tiny not recorded}}
   \end{tabularx}
@@ -562,11 +539,11 @@
     \EvidenceItem{assets/evidence/nature-journal.png}{Nature Journal}{}
   \end{tcolorbox}
 
-  \vspace{0.14em}
+  \vspace{0.1em}
   \WeeklyPatternCard
 \end{minipage}
 
-\vspace{0.18em}
+\vspace{0.1em}
 
 \begin{tcolorbox}[
   title={Next Week's Focus},
@@ -581,15 +558,15 @@
   right=2mm,
   top=1.0mm,
   bottom=1.0mm,
-  height=2.38cm
+  height=1.42cm
 ]
-  \FocusCard{Sky}{1}{Reading}{Keep short daily reading and clear speech practice.}\hfill
-  \FocusCard{Mint}{2}{Maths}{Build multiplication facts, especially 3s--9s.}\hfill
-  \FocusCard{Peach}{3}{Humanities}{Continue short map practice with confidence focus.}\hfill
-  \FocusCard{Lavender}{4}{Records}{Capture one evidence item from creative or practical-life work.}
+  \FocusCard{Sky}{1}{Reading}{Daily passage.}\hfill
+  \FocusCard{Mint}{2}{Maths}{Worked example.}\hfill
+  \FocusCard{Peach}{3}{Humanities}{Map recap.}\hfill
+  \FocusCard{Lavender}{4}{Records}{One artefact.}
 \end{tcolorbox}
 
-\vspace{0.14em}
+\vspace{0.08em}
 
 \begin{tcolorbox}[
   title={\DoodleLeaf\ End-of-Week Summary},
@@ -604,10 +581,10 @@
   right=2.2mm,
   top=0.9mm,
   bottom=0.9mm,
-  height=2.0cm
+  height=1.18cm
 ]
-  \small\linespread{1.06}\selectfont
-  Steady week with good coverage across all six pillars. Reading and maths were the most consistent areas, and Charles showed perseverance during harder map work. Evidence capture should improve next week, especially for creative and practical-life work.
+  \scriptsize\linespread{1.0}\selectfont
+  Strongest areas: reading, maths, and map practice. Next week: capture one visible artefact and record minutes more consistently.
 \end{tcolorbox}
 
 \end{document}
