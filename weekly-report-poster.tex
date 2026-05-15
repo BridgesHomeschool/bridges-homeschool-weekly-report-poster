@@ -202,7 +202,7 @@
 }
 
 \newcommand{\PillarMark}[3]{%
-  \begin{minipage}[c][1.42cm][c]{\linewidth}
+  \begin{minipage}[c][1.66cm][c]{\linewidth}
     \centering
     \makebox[\linewidth][c]{\tikz[baseline=-0.5ex]\node[circle,fill=#1,minimum size=0.88cm,text=white,inner sep=0pt] {\scalebox{1.24}{#2}};}\par
     \vspace{0.26em}
@@ -215,7 +215,7 @@
 }
 
 \newcommand{\LevelNotes}[3]{%
-  \begin{minipage}[c][1.34cm][c]{\linewidth}
+  \begin{minipage}[c][1.68cm][c]{\linewidth}
     \begingroup\setlength{\parskip}{0.04em}%
     {\color{Gold}$\bullet$} #1\par
     {\color{Gold}$\bullet$} #2\par
@@ -225,7 +225,7 @@
 }
 
 \newcommand{\ActivityNotes}[3]{%
-  \begin{minipage}[c][1.34cm][c]{\linewidth}
+  \begin{minipage}[c][1.68cm][c]{\linewidth}
     \begingroup\setlength{\parskip}{0.04em}%
     \if\relax\detokenize{#1}\relax\else{\color{SoftBlue}$\bullet$} #1\par\fi
     \if\relax\detokenize{#2}\relax\else{\color{SoftBlue}$\bullet$} #2\par\fi
@@ -237,11 +237,35 @@
 \newcommand{\NoMinutes}{\textcolor{Muted}{---}}
 
 \newcommand{\PillarRow}[4]{%
-  \rule[-0.76cm]{0pt}{1.68cm}#1
+  \rule[-0.95cm]{0pt}{2.05cm}#1
   & #2
   & #3
   & #4\\
   \hline
+}
+
+\newcommand{\LanguageLevelNotes}[4]{%
+  \begin{minipage}[c][1.68cm][c]{\linewidth}
+    {\tiny\bfseries\color{Navy}\MakeUppercase{English}}\par
+    {\color{Gold}$\bullet$} #1\par
+    {\color{Gold}$\bullet$} #2\par
+    \vspace{0.08em}
+    {\tiny\bfseries\color{Navy}\MakeUppercase{Thai}}\par
+    {\color{Gold}$\bullet$} #3\par
+    {\color{Gold}$\bullet$} #4%
+  \end{minipage}%
+}
+
+\newcommand{\LanguageActivityNotes}[4]{%
+  \begin{minipage}[c][1.68cm][c]{\linewidth}
+    {\tiny\bfseries\color{Navy}\MakeUppercase{English}}\par
+    {\color{SoftBlue}$\bullet$} #1\par
+    {\color{SoftBlue}$\bullet$} #2\par
+    \vspace{0.08em}
+    {\tiny\bfseries\color{Navy}\MakeUppercase{Thai}}\par
+    {\color{SoftBlue}$\bullet$} #3\par
+    {\color{SoftBlue}$\bullet$} #4%
+  \end{minipage}%
 }
 
 \newcommand{\PanelTitle}[3]{%
@@ -336,7 +360,7 @@
 \newcommand{\EvidenceItem}[3]{%
   \begin{minipage}[t]{0.48\linewidth}
     \centering
-    \EvidenceThumb{#1}{2.12cm}{1.28cm}\par
+    \EvidenceThumb{#1}{1.82cm}{1.02cm}\par
     {\tiny\itshape #2}
   \end{minipage}#3%
 }
@@ -371,8 +395,8 @@
     arc=1.3mm,
     left=1.2mm,
     right=1.2mm,
-    top=0.55mm,
-    bottom=0.55mm
+    top=0.42mm,
+    bottom=0.42mm
   ]
     {\tiny\bfseries\color{Muted}\MakeUppercase{#1}}\par
     {\tiny\color{Navy}#2}
@@ -393,7 +417,7 @@
     right=1.8mm,
     top=1.4mm,
     bottom=1.1mm,
-    height=3.25cm
+    height=2.95cm
   ]
     \scriptsize
     {\tiny\bfseries\color{Muted}\MakeUppercase{Active days}}\par
@@ -440,16 +464,13 @@
   \GlancePanel
 \end{minipage}
 
-\vspace{0.22em}
+\vspace{0.12em}
 
-\begin{minipage}[t]{0.685\textwidth}
+\begin{minipage}[t]{0.705\textwidth}
   \vspace{0pt}
-  {\centering\PanelTitle{Mint}{Navy}{Six-Pillar Learning Record}\par}
-  \vspace{0.18em}
-
   \arrayrulecolor{Line}
-  \fontsize{7.4}{8.05}\selectfont
-  \begin{tabularx}{\linewidth}{|L{2.55cm}|Y|Y|C{1.35cm}|}
+  \fontsize{7.15}{7.8}\selectfont
+  \begin{tabularx}{\linewidth}{|L{2.42cm}|Y|Y|C{1.22cm}|}
   \hline
   \rowcolor{Navy!94}
   \rule{0pt}{0.52cm}\color{white}\bfseries Pillar
@@ -460,8 +481,8 @@
   \rowcolor{Sky!35}
   \PillarRow
     {\PillarMark{SoftBlue}{\IconBook}{Languages}}
-    {\LevelNotes{Comfortable with sentence reading cards.}{Clear speech and expression are developing.}{Spelling and morphology improve with repetition.}}
-    {\ActivityNotes{Flashcards: vocab, spelling, morphology, grammar x 4}{Solo reading x 5}{Reading to Juliet x 2}}
+    {\LanguageLevelNotes{Sentence reading is comfortable.}{Spelling and morphology improve with repetition.}{Recall grows with short speaking prompts.}{Confidence improves in shared family practice.}}
+    {\LanguageActivityNotes{Vocab, spelling, morphology, grammar x 4}{Solo reading x 5; reading to Juliet x 2}{Thai letters/body-parts recall x 1}{Short oral recap target}}
     {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}165}\par{\tiny min}}
   \rowcolor{Paper}
   \PillarRow
@@ -497,7 +518,7 @@
   \normalsize
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.295\textwidth}
+\begin{minipage}[t]{0.275\textwidth}
   \vspace{0pt}
   \begin{tcolorbox}[
     title={\DoodleBook\ Books \& Reading},
@@ -512,13 +533,13 @@
     right=1.8mm,
     top=1.4mm,
     bottom=1.1mm,
-    height=5.65cm
+    height=4.85cm
   ]
     \BookItem{assets/books/wind-in-the-willows.png}{The Wind in the Willows}{Kenneth Grahame}{Parent read-aloud}{Listened and discussed characters.}
     \BookItem{assets/books/charlottes-web.png}{Charlotte's Web}{E. B. White}{Solo reading}{Short independent chapter practice.}
   \end{tcolorbox}
 
-  \vspace{0.25em}
+  \vspace{0.16em}
 
   \begin{tcolorbox}[
     title={\DoodleCamera\ Work Evidence},
@@ -533,15 +554,15 @@
     right=1.8mm,
     top=1.4mm,
     bottom=1.1mm,
-    height=5.15cm
+    height=3.75cm
   ]
     \EvidenceItem{assets/evidence/copywork.png}{Copywork}{\hfill}
-    \EvidenceItem{assets/evidence/math-work.png}{Math Work}{}\par\vspace{0.35em}
+    \EvidenceItem{assets/evidence/math-work.png}{Math Work}{}\par\vspace{0.16em}
     \EvidenceItem{assets/evidence/map-practice.png}{Map Practice}{\hfill}
     \EvidenceItem{assets/evidence/nature-journal.png}{Nature Journal}{}
   \end{tcolorbox}
 
-  \vspace{0.25em}
+  \vspace{0.14em}
   \WeeklyPatternCard
 \end{minipage}
 
