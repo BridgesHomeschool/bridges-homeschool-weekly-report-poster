@@ -1,0 +1,91 @@
+poster:
+  name: Augustus
+  title: Weekly Learning Dashboard
+  week_range: 11--17 May 2026
+  note: Current Augustus layout test fixture based on actual logs and weekly-review follow-up answers.
+  main_thread: Strong Anki follow-through, family chores, drawings, Thursday-to-Friday routines, and Friday piano.
+  stats:
+    pillars: 6
+    activities: 13
+    logged_minutes: '---'
+    books: 0
+  sections:
+    - section: Languages
+      current_level:
+        - Reading work showed up in Anki rather than standalone book titles.
+        - Short review sets worked well.
+        - Positive encouragement seemed to help his follow-through.
+      activities:
+        - Reading x 3
+        - Vocabulary x 2
+        - World x 3
+    - section: Mathematical and Scientific Reasoning
+      current_level:
+        - Arithmetic review was steady.
+        - He stayed willing and proactive with the flashcards.
+        - The short sets were a good fit.
+      activities:
+        - Arithmetic x 3
+    - section: Humanities
+      current_level:
+        - World review stayed present through the week.
+        - Thai letters and body-parts recall appeared in the family quiz.
+        - He reacted well to encouragement and recognition.
+      activities:
+        - World x 3
+        - Thai discussion x 1
+        - Shared quiz night x 1
+    - section: Arts and Making
+      current_level:
+        - He drew monster pictures with the boys.
+        - Piano happened on Friday.
+        - Drawing seemed easy to start when the group was doing it together.
+      activities:
+        - Monster drawing x 4
+        - Piano x 1
+    - section: Health and Physical Readiness
+      current_level:
+        - The boys rode bikes and played on the playground most weekdays.
+        - Outdoor movement was part of the normal rhythm.
+        - No separate timed movement was recorded.
+      activities:
+        - Bike riding x 1
+        - Playground play x 5
+    - section: Practical Life and Household Competence
+      current_level:
+        - He helped unload the dishwasher every weekday.
+        - He made mum and dad's bed on Tuesday, Wednesday, and Thursday.
+        - He also helped with Noonoo (the robovac).
+      activities:
+        - Dishwasher unload x 5
+        - Bed-making x 3
+        - Noonoo reset x 1
+  reading:
+    note: Reading work showed up mostly as Anki review.
+    evidence_note: No standalone book-cover evidence was logged for Augustus this week.
+    sessions:
+      - date: '2026-05-11'
+        label: Reading (20 cards, 36 reviews)
+      - date: '2026-05-12'
+        label: Reading (14 cards, 18 reviews)
+      - date: '2026-05-13'
+        label: Reading (12 cards, 27 reviews)
+      - date: '2026-05-15'
+        label: Reading (4 cards, 4 reviews)
+  weekly_pattern:
+    active_days: [Mon, Tue, Wed, Thu, Fri]
+    most_consistent: Anki review and family chores
+    strongest_days: Wed / Fri
+    records_focus: Helpful routines and short review sets
+  next_week_focus:
+    - Keep the proactive flashcard routine.
+    - Keep logging the little household jobs.
+    - Capture a few more details about drawing or music when they happen.
+    - Keep movement/outdoor time visible in the logs.
+  end_summary: "Strongest areas: helpful behaviour, positive response to encouragement, and proactive flashcard work. Next week: keep the routines visible and keep the short review sets going."
+  source_logs:
+    - data/logs/daily/2026-05-11.yaml
+    - data/logs/daily/2026-05-12.yaml
+    - data/logs/daily/2026-05-13.yaml
+    - data/logs/daily/2026-05-14.yaml
+    - data/logs/daily/2026-05-15.yaml

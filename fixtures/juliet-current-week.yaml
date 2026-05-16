@@ -1,0 +1,86 @@
+poster:
+  name: Juliet
+  title: Weekly Learning Dashboard
+  week_range: 11--17 May 2026
+  note: Current Juliet layout test fixture based on actual logs and weekly-review follow-up answers.
+  main_thread: Phonics, strong Thai vocabulary, book nook time, cooking/helping, and a small Friday piano session.
+  stats:
+    pillars: 5
+    activities: 8
+    logged_minutes: '---'
+    books: 0
+  sections:
+    - section: Languages
+      current_level:
+        - Thai vocabulary looked especially strong.
+        - Body-parts recall in the Thai game was excellent.
+        - Phonics happened in a small, focused session.
+      activities:
+        - Thai discussion x 2
+        - Phonics x 1
+    - section: Mathematical and Scientific Reasoning
+      current_level:
+        - No separate maths work was logged.
+        - Any counting or sorting work was not captured.
+        - The week was mostly language and family-routine heavy.
+      activities:
+        - No maths-specific evidence was logged.
+    - section: Humanities
+      current_level:
+        - The book nook visit gave her a social learning stretch.
+        - She joined the family Thai recap and quiz work.
+        - She also took part in the shared quiz night.
+      activities:
+        - Book nook x 1
+        - Thai quiz x 1
+        - Shared quiz night x 1
+    - section: Arts and Making
+      current_level:
+        - Piano happened on Friday.
+        - She enjoyed the small piano session.
+        - The week stayed light rather than formal.
+      activities:
+        - Piano x 1
+    - section: Practical Life and Household Competence
+      current_level:
+        - She often came to help mum with cooking and dishes.
+        - Bringing her chair over to stand on was part of the routine.
+        - Household helping was a clear strength.
+      activities:
+        - Cooking help x 4
+        - Dishes help x 4
+    - section: Health and Physical Readiness
+      current_level:
+        - She joined the group movement time and play.
+        - Bedtime was still a bit of a struggle.
+        - More sleep consistency may help her energy.
+      activities:
+        - Playground play x 5
+        - Sleep routine x 1
+  reading:
+    note: Juliet's week was mostly phonics and Thai language play rather than standalone titles.
+    evidence_note: Phonics evidence was captured as a work-sample photo.
+    sessions:
+      - date: '2026-05-13'
+        label: Phonics cards / butterfly Thai book
+  evidence:
+    - date: '2026-05-13'
+      label: Juliet phonics photo
+      file: ../bridges-homeschool-core/data/evidence/work-samples/2026-05-13_juliet_phonics.jpg
+  weekly_pattern:
+    active_days: [Mon, Tue, Wed, Thu, Fri]
+    most_consistent: Helping and language play
+    strongest_days: Tue / Thu / Fri
+    records_focus: Thai vocabulary, phonics, and helping routines
+  next_week_focus:
+    - Keep the phonics work short and consistent.
+    - Capture more of her Thai vocabulary wins.
+    - Keep the helping routines visible.
+    - Note bedtime if it keeps being a challenge.
+  end_summary: "Strongest areas: Thai vocabulary, helping Mum, and the small phonics/piano steps. Next week: keep the language play visible and keep bedtime notes honest."
+  source_logs:
+    - data/logs/daily/2026-05-11.yaml
+    - data/logs/daily/2026-05-12.yaml
+    - data/logs/daily/2026-05-13.yaml
+    - data/logs/daily/2026-05-14.yaml
+    - data/logs/daily/2026-05-15.yaml

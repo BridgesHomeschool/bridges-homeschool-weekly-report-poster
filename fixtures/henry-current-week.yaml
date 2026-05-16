@@ -1,0 +1,98 @@
+poster:
+  name: Henry
+  title: Weekly Learning Dashboard
+  week_range: 11--17 May 2026
+  note: Current Henry layout test fixture based on actual logs and weekly-review follow-up answers.
+  main_thread: Reading confidence, Lego, bikes/playground time, household help, and Friday piano.
+  stats:
+    pillars: 6
+    activities: 12
+    logged_minutes: '---'
+    books: 2
+  sections:
+    - section: Languages
+      current_level:
+        - Reading looked stronger and more eager this week.
+        - He seemed more confident and willing to keep going.
+        - Thai body-parts recall happened in the family quiz.
+      activities:
+        - Reading x 3
+        - Thai discussion x 1
+        - Shared quiz night x 1
+    - section: Mathematical and Scientific Reasoning
+      current_level:
+        - Arithmetic review kept appearing in the Anki sessions.
+        - Short sets were enough for the week.
+        - He stayed fairly steady across the days.
+      activities:
+        - Arithmetic x 3
+    - section: Humanities
+      current_level:
+        - World review stayed part of the mixed Anki work.
+        - Shared quiz night gave him extra recall practice.
+        - A story-book style reading day also appeared.
+      activities:
+        - World x 3
+        - Story / reading x 1
+        - Shared quiz night x 1
+    - section: Arts and Making
+      current_level:
+        - He did Lego every day.
+        - Piano on Friday was focused.
+        - He also joined in the monster drawings.
+      activities:
+        - Lego x 5
+        - Piano x 1
+        - Monster drawing x 4
+    - section: Health and Physical Readiness
+      current_level:
+        - Boys rode bikes and played on the playground each weekday.
+        - Henry stayed active in the group routine.
+        - Movement looked consistent rather than dramatic.
+      activities:
+        - Bike riding x 5
+        - Playground play x 5
+    - section: Practical Life and Household Competence
+      current_level:
+        - He helped unload the dishwasher every weekday.
+        - He joined the family routines around the house.
+        - Noonoo / robovac help was noted for the group routine.
+      activities:
+        - Dishwasher unload x 5
+        - Family help x 1
+  reading:
+    note: Henry had a couple of actual reading books plus Anki reading review.
+    evidence_note: One reading book was captured as metadata; another had book-cover evidence.
+    titles:
+      - date: '2026-05-12'
+        label: Sun Sets
+      - date: '2026-05-13'
+        label: Grizzly Bear Rock
+      - date: '2026-05-14'
+        label: Jig and Mag
+      - date: '2026-05-14'
+        label: another book (title pending)
+    evidence:
+      - date: '2026-05-12'
+        label: Sun Sets metadata
+        file: ../bridges-homeschool-core/data/evidence/reading/2026-05-12_henry_sun-sets.yaml
+      - date: '2026-05-13'
+        label: Grizzly Bear Rock cover
+        file: ../bridges-homeschool-core/data/evidence/reading/2026-05-13_henry_grizzly-bear-rock.jpg
+  weekly_pattern:
+    active_days: [Mon, Tue, Wed, Thu, Fri]
+    most_consistent: Reading and Lego
+    strongest_days: Wed / Fri
+    records_focus: Reading confidence and household routines
+  next_week_focus:
+    - Keep reading short and confident.
+    - Keep the Lego work visible.
+    - Continue the household-help routines.
+    - Capture the title of the second book when it comes back up.
+  end_summary: "Strongest areas: reading confidence, family routines, and focused Friday piano. Next week: keep the reading momentum and keep the little helper jobs visible."
+  source_logs:
+    - data/logs/daily/2026-05-11.yaml
+    - data/logs/daily/2026-05-12.yaml
+    - data/logs/daily/2026-05-13.yaml
+    - data/logs/daily/2026-05-14.yaml
+    - data/logs/daily/2026-05-15.yaml

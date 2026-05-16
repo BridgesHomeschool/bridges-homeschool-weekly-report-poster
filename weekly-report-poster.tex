@@ -42,7 +42,6 @@
 \newcommand{\StudentName}{Charles}
 \newcommand{\ReportTitle}{Weekly Learning Dashboard}
 \newcommand{\ReportWeek}{Week of 11--17 May 2026}
-\newcommand{\StudentReferenceImage}{assets/children/charles/reference.jpg}
 
 \newcommand{\IconBook}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white] (0,-1.65)..controls(-.65,-1.15)and(-1.35,-1.15)..(-2,-1.45)--(-2,1.55)..controls(-1.25,1.25)and(-.55,1.25)..(0,.75)--cycle;\draw[white] (0,-1.65)..controls(.65,-1.15)and(1.35,-1.15)..(2,-1.45)--(2,1.55)..controls(1.25,1.25)and(.55,1.25)..(0,.75)--cycle;\draw[white] (0,.75)--(0,-1.65);\end{tikzpicture}}
 \newcommand{\IconCalc}{\begin{tikzpicture}[x=.15cm,y=.15cm,line width=.85pt]\draw[white,rounded corners=1pt] (-1.6,-1.9) rectangle (1.6,1.8);\draw[white] (-1.05,.95)--(1.05,.95);\foreach \x in {-1,0,1}{\foreach \y in {.25,-.55,-1.35}{\fill[white] (\x,\y) circle (.12);}}\end{tikzpicture}}
@@ -121,10 +120,10 @@
 }
 
 \newcommand{\StudentPhoto}{%
-  \IfFileExists{\StudentReferenceImage}{%
-    \begin{tikzpicture}[baseline=-0.55cm]
-      \node[circle,draw=Line,line width=0.45pt,inner sep=0.8pt] {\includegraphics[width=1.38cm,height=1.38cm,keepaspectratio]{\StudentReferenceImage}};
-    \end{tikzpicture}\hspace{0.42em}%
+  \IfFileExists{assets/student-photo.png}{%
+    \begin{tikzpicture}
+      \node[circle,draw=Line,line width=0.4pt,inner sep=1pt] {\includegraphics[width=1.55cm,height=1.55cm,keepaspectratio]{assets/student-photo.png}};
+    \end{tikzpicture}\hspace{0.5em}%
   }{}%
 }
 
@@ -162,10 +161,10 @@
     top=0.9mm,
     bottom=0.9mm
   ]
-    \Metric{SoftBlue}{\MetricPillarsIcon}{6}{Pillars}\MetricSep
-    \Metric{SoftGreen}{\MetricActivitiesIcon}{22}{Activities}\MetricSep
-    \Metric{SoftRed}{\MetricMinutesIcon}{7.5h}{Logged}\MetricSep
-    \Metric{SoftOrange}{\MetricBooksIcon}{2}{Books}\par
+    \Metric{SoftBlue}{\MetricPillarsIcon}{3}{Pillars}\MetricSep
+    \Metric{SoftGreen}{\MetricActivitiesIcon}{11}{Activities}\MetricSep
+    \Metric{SoftRed}{\MetricMinutesIcon}{---}{Logged}\MetricSep
+    \Metric{SoftOrange}{\MetricBooksIcon}{0}{Books}\par
     \vspace{0.2em}
     \begin{tcolorbox}[
       colback=Paper,
@@ -177,7 +176,7 @@
       top=0.45mm,
       bottom=0.45mm
     ]
-      \tiny\textbf{\color{Navy}Main thread:} steady practice, short sessions, and stronger follow-through.
+      \tiny\textbf{\color{Navy}Main thread:} Anki review, Thai practice, and one shared quiz night.
     \end{tcolorbox}
   \end{tcolorbox}%
 }
@@ -399,11 +398,13 @@
     \scriptsize
     {\tiny\bfseries\color{Muted}\MakeUppercase{Active days}}\par
     \vspace{0.04em}
-    \PatternPill{Mon}\ \PatternPill{Tue}\ \PatternPill{Wed}\ \PatternPill{Thu}\ \PatternPill{Fri}\par
+    \PatternPill{Tue}\ \PatternPill{Wed}\ \PatternPill{Fri}\par
     \vspace{0.18em}
-    \PatternRow{Most consistent}{Languages}
+    \PatternRow{Most consistent}{Anki review}
     \vspace{0.08em}
-    \PatternRow{Strongest days}{Tue / Fri}
+    \PatternRow{Strongest days}{Wed / Fri}
+    \vspace{0.08em}
+    \PatternRow{Records focus}{Thai video and shared quiz}
   \end{tcolorbox}%
 }
 
@@ -432,7 +433,7 @@
   \vspace{0.16em}
   {\normalsize\ReportWeek}\par
   \vspace{0.25em}
-  \SoftNote{A steady week of practice, reading, map work, movement, and family life skills.}
+  \SoftNote{A week of Anki review, Thai practice, and a family quiz night.}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.51\textwidth}
@@ -457,38 +458,38 @@
   \rowcolor{Sky!35}
   \PillarRow
     {\PillarMark{SoftBlue}{\IconBook}{Languages}}
-    {\LanguageLevelNotes{Sentence reading is comfortable.}{Spelling and morphology improve with repetition.}{Recall grows with short speaking prompts.}{Confidence improves in shared family practice.}}
-    {\LanguageActivityNotes{Vocab, spelling, morphology, grammar x 4}{Solo reading x 5; reading to Juliet x 2}{Thai letters/body-parts recall x 1}{Short oral recap target}}
-    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}165}\par{\tiny min}}
+    {\LevelNotes{Grammar and morphology kept returning in review.}{Vocabulary and spelling stayed in the mix.}{Thai recap happened once on 13 May.}}
+    {\ActivityNotes{Grammar x 2; morphology x 2}{Vocabulary x 2; spelling x 1; reading x 3}{Thai discussion x 1}}
+    {\NoMinutes\par{\tiny not recorded}}
   \rowcolor{Paper}
   \PillarRow
     {\PillarMark{SoftGreen}{\IconCalc}{Mathematical and Scientific Reasoning}}
-    {\LevelNotes{Arithmetic facts mostly fluent.}{Multiplication needs practice.}{Persistence is improving.}}
-    {\ActivityNotes{Arithmetic practice x 4}{Multiplication cards x 3}{Word problems x 2}}
-    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}115}\par{\tiny min}}
+    {\LevelNotes{Arithmetic facts kept showing up regularly.}{Three review days were logged this week.}{Short sets worked best.}}
+    {\ActivityNotes{Arithmetic x 3}{}{}}
+    {\NoMinutes\par{\tiny not recorded}}
   \rowcolor{Peach!36}
   \PillarRow
     {\PillarMark{SoftOrange}{\IconGlobe}{Humanities}}
-    {\LevelNotes{Map confidence is growing.}{Country names are sticking.}{Discussion recall is improving.}}
-    {\ActivityNotes{Map skills x 2}{Country naming x 2}{History discussion x 1}}
-    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}70}\par{\tiny min}}
+    {\LevelNotes{World review stayed active.}{Story of the World volume 1 showed up once.}{A shared quiz night added reasoning practice.}}
+    {\ActivityNotes{World x 3}{Story of the World Volume 1 x 1}{Shared quiz night x 1}}
+    {\NoMinutes\par{\tiny not recorded}}
   \rowcolor{Lavender!38}
   \PillarRow
     {\PillarMark{SoftPurple}{\IconPalette}{Arts and Making}}
-    {\LevelNotes{Enjoys visual prompts.}{Short starts help.}{More evidence needed.}}
-    {\ActivityNotes{Sketching x 1}{Music practice x 2}{Story notebook x 1}}
-    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}55}\par{\tiny min}}
+    {\LevelNotes{No separate arts activity was logged.}{The week stayed focused on cards and discussion.}{Any art or music work was not captured.}}
+    {\ActivityNotes{No arts-specific evidence was logged.}{That section stayed quiet this week.}{}}
+    {\NoMinutes\par{\tiny not recorded}}
   \rowcolor{Sky!28}
   \PillarRow
     {\PillarMark{SoftRed}{\IconRun}{Health and Physical Readiness}}
-    {\LevelNotes{Outdoor movement helps focus.}{Coordination work is steady.}{Breaks support energy.}}
-    {\ActivityNotes{Outdoor play x 3}{Stretching x 2}{Habits check-in x 2}}
-    {{\fontsize{18}{18}\selectfont\bfseries\color{Navy}85}\par{\tiny min}}
+    {\LevelNotes{No separate health or physical work was logged.}{The week stayed focused on review and discussion.}{Movement may simply not have been recorded.}}
+    {\ActivityNotes{No health/physical evidence was logged.}{That section stayed quiet this week.}{}}
+    {\NoMinutes\par{\tiny not recorded}}
   \rowcolor{Mint!42}
   \PillarRow
     {\PillarMark{SoftTeal}{\IconHome}{Practical Life and Household Competence}}
-    {\LevelNotes{Routine independence is growing.}{Small tasks work best.}{Duration not recorded.}}
-    {\ActivityNotes{Kitchen helper x 2}{Room reset x 2}{Laundry sorting x 1}}
+    {\LevelNotes{No separate practical-life work was logged.}{The week stayed focused on review and family activities.}{Household tasks may simply not have been recorded.}}
+    {\ActivityNotes{No practical-life evidence was logged.}{That section stayed quiet this week.}{}}
     {\NoMinutes\par{\tiny not recorded}}
   \end{tabularx}
   \normalsize
@@ -511,8 +512,11 @@
     bottom=1.1mm,
     height=4.85cm
   ]
-    \BookItem{assets/books/wind-in-the-willows.png}{The Wind in the Willows}{Kenneth Grahame}{Parent read-aloud}{Listened and discussed characters.}
-    \BookItem{assets/books/charlottes-web.png}{Charlotte's Web}{E. B. White}{Solo reading}{Short independent chapter practice.}
+    {\tiny\bfseries\color{Navy}No standalone reading titles were logged for Charles this week.}\par
+    {\tiny\color{Ink}Reading work showed up as Anki sessions on 12, 13, and 15 May.}\par
+    {\tiny\color{Muted}12 May — Reading (14 cards, 18 reviews)}\par
+    {\tiny\color{Muted}13 May — Reading (3 cards, 5 reviews)}\par
+    {\tiny\color{Muted}15 May — Reading (4 cards, 4 reviews)}
   \end{tcolorbox}
 
   \vspace{0.16em}
@@ -532,10 +536,9 @@
     bottom=1.1mm,
     height=3.75cm
   ]
-    \EvidenceItem{assets/evidence/copywork.png}{Copywork}{\hfill}
-    \EvidenceItem{assets/evidence/math-work.png}{Math Work}{}\par\vspace{0.16em}
-    \EvidenceItem{assets/evidence/map-practice.png}{Map Practice}{\hfill}
-    \EvidenceItem{assets/evidence/nature-journal.png}{Nature Journal}{}
+    \EvidenceItem{../bridges-homeschool-core/data/evidence/work-samples/2026-05-13_thai_quiz_video_thumb.jpg}{Thai quiz video, 13 May}{\hfill}
+    \par\vspace{0.18em}
+    {\tiny\color{Muted}Shared Thai letters/body-parts quiz with the boys and the whole family.}
   \end{tcolorbox}
 
   \vspace{0.1em}
@@ -559,10 +562,10 @@
   bottom=1.0mm,
   height=1.42cm
 ]
-  \FocusCard{Sky}{1}{Reading}{Daily passage.}\hfill
-  \FocusCard{Mint}{2}{Maths}{Worked example.}\hfill
-  \FocusCard{Peach}{3}{Humanities}{Map recap.}\hfill
-  \FocusCard{Lavender}{4}{Records}{One artefact.}
+  \FocusCard{Sky}{1}{Reading}{Log book titles when they appear.}\hfill
+  \FocusCard{Mint}{2}{Maths}{Keep the short review sets.}\hfill
+  \FocusCard{Peach}{3}{Humanities}{World review and quiz recall.}\hfill
+  \FocusCard{Lavender}{4}{Records}{Attach the next actual artifact.}
 \end{tcolorbox}
 
 \vspace{0.08em}
@@ -583,7 +586,7 @@
   height=1.18cm
 ]
   \scriptsize\linespread{1.0}\selectfont
-  Strongest areas: reading, maths, and map practice. Next week: capture one visible artefact and record minutes more consistently.
+  Strongest areas: Anki review, Thai practice, and the shared quiz night. Next week: capture book titles when they appear and keep the short review sets going.
 \end{tcolorbox}
 
 \end{document}

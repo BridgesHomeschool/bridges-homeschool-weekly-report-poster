@@ -1,116 +1,132 @@
-child: charles
-display_name: Charles
-week:
-  start: 2026-05-11
-  end: 2026-05-17
-  label: Week of 11--17 May 2026
-reference_image: assets/children/charles/reference.jpg
-summary:
-  dashboard_title: Weekly Learning Dashboard
-  main_thread: Anki breadth, Thai recall, and quiz reasoning.
-  note: A light recorded week: strong Anki volume, Thai recall, and family quiz reasoning.
-  end_of_week: "Strongest areas: Anki language, arithmetic, and world review. Next week: add one visible artefact and record minutes."
-metrics:
-  pillars: 4
-  activities: 4
-  minutes: null
-  books: 0
-weekly_pattern:
-  active_days:
-    - Tue
-    - Wed
-  most_consistent: Languages
-  strongest_day: Wed
-  records_focus: Minutes + sample
-books_reading:
-  - title: Anki Reading
-    date: May 12--13
-    status: Review practice
-    detail: 17 cards / 23 reviews.
-  - title: Reading Log
-    date: Current week
-    status: Needs entry
-    detail: No standalone book logged.
-work_evidence:
-  - label: Anki
-    source: "2026-05-12 and 2026-05-13 Anki logs"
-  - label: Thai quiz
-    source: "../../evidence/work-samples/2026-05-13_thai_quiz_video.mp4"
-  - label: Quiz
-    source: "2026-05-13 family flag and movie-emoji quiz"
-  - label: Sample needed
-    source: "No visible written/art/movement artefact logged for Charles"
-pillars:
-  languages:
-    current_level:
-      english:
-        - Reading, grammar, morphology, spelling, and vocabulary were active in Anki.
-        - Reading review was light but present.
-      thai:
-        - Thai letters and body-parts recall were practised with family.
-        - Short spoken recall is the next target.
-    activities:
-      english:
-        - Reading Anki: 17 cards / 23 reviews.
-        - Grammar, morphology, vocabulary, and spelling Anki were active.
-      thai:
-        - Thai letters and body-parts quiz.
-        - Short oral recap target.
-    minutes: null
-  mathematical_and_scientific_reasoning:
-    current_level:
-      - Arithmetic fluency is being maintained through reviews.
-      - High card volume suggests solid practice stamina.
-      - Worked examples were not logged this week.
-    activities:
-      - "Arithmetic Anki: 72 cards."
-      - "Arithmetic reviews: 102."
-      - Two review days.
-    minutes: null
-  humanities:
-    current_level:
-      - World/map knowledge is active.
-      - Flag recall came up in family quiz night.
-      - Oral explanation would strengthen the record.
-    activities:
-      - "World Anki: 37 cards."
-      - "World reviews: 79."
-      - Family flag quiz.
-    minutes: null
-  arts_and_making:
-    current_level:
-      - No arts entry logged.
-      - Evidence capture is open.
-      - Add one visible artefact.
-    activities:
-      - No logged activity.
-      - "Suggested: drawing, music, or build."
-    minutes: 0
-  health_and_physical_readiness:
-    current_level:
-      - No movement entry logged.
-      - Activity may be unrecorded.
-      - Add one outdoor note.
-    activities:
-      - No logged activity.
-      - "Suggested: outdoor play."
-    minutes: 0
-  practical_life_and_household_competence:
-    current_level:
-      - Group participation was noted.
-      - Frustration around winning was noted.
-      - Practise gracious competition.
-    activities:
-      - Family quiz night.
-      - Shared discussion.
-      - Win/loss language target.
-    minutes: null
-next_week_focus:
-  - title: Reading
-    text: Log passage.
-  - title: Maths
-    text: Worked example.
-  - title: Thai
-    text: Oral recall.
-  - title: Records
-    text: One artefact.
+poster:
+  name: Charles
+  title: Weekly Learning Dashboard
+  week_range: 11--17 May 2026
+  note: Current Charles layout test fixture based on actual logs, evidence, and weekly-review follow-up answers.
+  main_thread: Anki review, reading titles, Thai practice, a shared quiz night, bike/playground time, and family routines.
+  stats:
+    pillars: 6
+    activities: 19
+    logged_minutes: '---'
+    books: 16
+  sections:
+    - section: Languages
+      current_level:
+        - Grammar and morphology kept returning in review.
+        - Vocabulary and spelling stayed in the mix.
+        - Thai recap happened once in the shared quiz work.
+      activities:
+        - Grammar x 2
+        - Morphology x 2
+        - Vocabulary x 2
+        - Spelling x 1
+        - Reading x 3
+        - Thai discussion x 1
+    - section: Mathematical and Scientific Reasoning
+      current_level:
+        - Arithmetic facts kept coming back in short sets.
+        - Repetition worked better than long sessions.
+        - Long review blocks seemed to drain him a bit.
+      activities:
+        - Arithmetic x 3
+    - section: Humanities
+      current_level:
+        - World review stayed active.
+        - Story of the World Volume 1 appeared once.
+        - Shared quiz night added reasoning practice.
+      activities:
+        - World x 3
+        - Story of the World Volume 1 x 1
+        - Shared quiz night x 1
+    - section: Arts and Making
+      current_level:
+        - He drew an excavator and a truck from a how-to-draw book.
+        - Monster drawings also showed up in the weekly notes.
+        - Piano happened on Friday.
+      activities:
+        - Piano x 1
+        - How-to-draw sketch x 1
+        - Monster drawing x 1
+    - section: Health and Physical Readiness
+      current_level:
+        - Boys rode bikes and played on the playground most weekdays.
+        - Charles rode his bike on Monday and otherwise played.
+        - Movement helped round out the week.
+      activities:
+        - Bike riding x 1
+        - Playground play x 5
+    - section: Practical Life and Household Competence
+      current_level:
+        - Helped unload the dishwasher on weekdays.
+        - Family routines were part of the week.
+        - Household work was short but consistent.
+      activities:
+        - Dishwasher unload x 5
+        - Family help x 1
+  reading:
+    note: Standalone reading titles were captured from cover photos and series references.
+    evidence_note: Reading evidence includes multiple book-cover photos and one shared quiz artifact.
+    titles:
+      - date: '2026-05-11'
+        label: Skylanders Universe Chronicles
+      - date: '2026-05-11'
+        label: The Ant and the Grasshopper
+      - date: '2026-05-11'
+        label: The Sun and the Wind
+      - date: '2026-05-11'
+        label: Anansi and the Tug of War
+      - date: '2026-05-12'
+        label: How the Camel got his Hump
+      - date: '2026-05-12'
+        label: How the Leopard got his Spots
+      - date: '2026-05-12'
+        label: King Midas and the Gold
+      - date: '2026-05-12'
+        label: Do You Feel Lucky? (Murderous Maths)
+      - date: '2026-05-13'
+        label: Old Macdonald Had a Farm
+      - date: '2026-05-13'
+        label: The Fox and the Crow
+      - date: '2026-05-13'
+        label: The Fox and the Stork
+      - date: '2026-05-15'
+        label: The Rabbit's Tale
+      - date: '2026-05-15'
+        label: The Three Wishes
+      - date: '2026-05-15'
+        label: The Wish Fish
+      - date: '2026-05-16'
+        label: Ships
+      - date: '2026-05-16'
+        label: Living in Space
+    evidence:
+      - date: '2026-05-11'
+        label: Skylanders cover
+        file: ../bridges-homeschool-core/data/evidence/reading/2026-05-11_charles_skylanders-universe-chronicles.jpg
+      - date: '2026-05-12'
+        label: Do You Feel Lucky? cover
+        file: ../bridges-homeschool-core/data/evidence/reading/2026-05-16_charles_do-you-feel-lucky.jpg
+      - date: '2026-05-16'
+        label: Ships / Living in Space cover
+        file: ../bridges-homeschool-core/data/evidence/reading/2026-05-16_charles_ships-living-in-space.jpg
+      - date: '2026-05-13'
+        label: Thai quiz video, 13 May
+        file: ../bridges-homeschool-core/data/evidence/work-samples/2026-05-13_thai_quiz_video_thumb.jpg
+  weekly_pattern:
+    active_days: [Mon, Tue, Wed, Thu, Fri]
+    most_consistent: Anki review
+    strongest_days: Wed / Fri
+    records_focus: Reading titles, Thai video, and shared quiz
+  next_week_focus:
+    - Keep the short review sets.
+    - Log book titles when they appear.
+    - Keep the Thai recap and quiz recall.
+    - Attach the next actual artifact.
+  end_summary: "Strongest areas: Anki review, Thai practice, and the shared quiz night. Next week: capture book titles when they appear and keep the short review sets going."
+  source_logs:
+    - data/logs/daily/2026-05-11.yaml
+    - data/logs/daily/2026-05-12.yaml
+    - data/logs/daily/2026-05-13.yaml
+    - data/logs/daily/2026-05-14.yaml
+    - data/logs/daily/2026-05-15.yaml
+    - data/logs/daily/2026-05-16.yaml

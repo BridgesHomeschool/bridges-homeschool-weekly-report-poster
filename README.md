@@ -44,12 +44,19 @@ lualatex -interaction=nonstopmode -halt-on-error weekly-report-poster.tex
 
 The template expects the sibling `bridges-brand-system` repo to be present. It uses the shared Bridges class, fonts, colors, and logo assets.
 
-## Local layout fixture
+## Local layout fixtures
 
-For layout testing, the repo includes a saved Charles snapshot at
-`fixtures/charles-current-week.yaml`. It mirrors the current poster content
-based on the actual homeschool logs and can be used as a stable test fixture
-when iterating on spacing or typography.
+For layout testing, the repo includes current-week snapshots for each child in
+`fixtures/`:
+
+- `fixtures/charles-current-week.yaml`
+- `fixtures/augustus-current-week.yaml`
+- `fixtures/henry-current-week.yaml`
+- `fixtures/juliet-current-week.yaml`
+
+They mirror the current poster content based on the actual homeschool logs and
+weekly-review answers, and they can be used as stable test fixtures when
+iterating on spacing or typography.
 
 ## Child reference assets
 
